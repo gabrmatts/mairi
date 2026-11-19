@@ -4,316 +4,476 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>MAIRI — Consultoria em Marketing | Rios que conectam</title>
+    <title>MAIRI | Consultoria em Marketing</title>
     <meta name="description"
-        content="Consultoria em marketing que fortalece empreendimentos dos Povos Tradicionais das Amazônias. Belém, Pará.">
-    <meta property="og:title" content="MAIRI — Rios que conectam">
-    <meta property="og:description" content="Marketing com raízes. Estratégia com propósito.">
+        content="Consultoria de marketing para empreendimentos dos Povos Tradicionais das Amazônias. Estratégia, comunicação e relacionamento com identidade territorial.">
+    <meta property="og:title" content="MAIRI | Consultoria em Marketing">
+    <meta property="og:description" content="Conectamos histórias, territórios e negócios a novas oportunidades.">
     <meta property="og:type" content="website">
-    <link rel="canonical" href="https://SEU-DOMINIO.vercel.app/">
-    <script>document.documentElement.classList.add('js')</script>
+    <meta name="theme-color" content="#2A1D1A">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <a class="skip" href="#mairi">Pular para o conteúdo</a>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="spica" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 0l2.2 8.2L22 6l-6 6 6 6-7.8-2.2L12 24l-2.2-8.2L2 18l6-6-6-6 7.8 2.2z" />
+        </symbol>
+        <symbol id="arrow" viewBox="0 0 24 24">
+            <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </symbol>
+        <symbol id="wa" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M12 2a10 10 0 00-8.6 15l-1.4 5 5.1-1.3A10 10 0 1012 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.200zm4.500-6.100c-.2-.1-1.500-.7-1.700-.8s-.4-.1-.6.100-.6.800-.8 1-.3.200-.6.100a6.700 6.700 0 01-3.300-2.900c-.2-.4.200-.4.700-1.300.1-.1 0-.3 0-.4l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.300 3 3 0 00-.9 2.200 5.200 5.200 0 001.100 2.800 11.900 11.900 0 004.600 4c1.700.7 2.400.8 3.200.7a2.700 2.700 0 001.800-1.300 2.200 2.200 0 00.2-1.300c-.1-.1-.2-.2-.5-.3z" />
+        </symbol>
+    </svg>
 
     <header id="hd">
-        <a class="logo" href="#inicio" aria-label="Mairi — início"><img src="img/LOGO - MAIRI (white).png"
-                alt="Mairi"><span>MAIRI</span></a>
-        <nav aria-label="Principal">
-            <ul>
-                <li><a href="#mairi">A Mairi</a></li>
-                <li><a href="#atuacao">Atuação</a></li>
-                <li><a href="#olhar">Nosso olhar</a></li>
-                <li><a href="#qa">Perguntas</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-        <button class="burger" id="bg" aria-expanded="false" aria-controls="menu"
-            aria-label="Abrir menu"><i></i><i></i></button>
+        <div class="w nav">
+            <a href="#hero" class="logo" aria-label="MAIRI, início"><img class="lg" src="img/LOGO - MAIRI (white).png"
+                    alt="MAIRI" width="150" height="32"></a>
+            <button class="bur" id="bur" aria-label="Abrir menu" aria-expanded="false"
+                aria-controls="nv"><span></span><span></span><span></span></button>
+            <nav id="nv" aria-label="Principal">
+                <ul>
+                    <li><a href="#desafios">Desafios</a></li>
+                    <li><a href="#historia">História</a></li>
+                    <li><a href="#solucao">Soluções</a></li>
+                    <li><a href="#evidencias">Evidências</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#processo">Processo</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <div id="menu" aria-hidden="true">
-        <a href="#mairi">A Mairi</a><a href="#atuacao">Atuação</a><a href="#olhar">Nosso olhar</a><a
-            href="#qa">Perguntas</a><a href="#contato">Contato</a>
-    </div>
-
     <main>
-        <!-- 1 · HEADLINE -->
-        <section id="inicio" class="hero">
-            <div class="wrap hero-txt">
-                <p class="kick" data-r>Consultoria em marketing</p>
-                <h1 data-r style="--dl:100ms">Conectamos histórias.<br>Criamos caminhos.<br>Transformamos
-                    possibilidades.</h1>
-                <p class="sub" data-r style="--dl:200ms">Aproximamos empreendimentos tradicionais das Amazônias de novas
-                    oportunidades, conectando identidade, estratégia e desenvolvimento.</p>
-                <div class="row" data-r style="--dl:300ms">
-                    <a class="btn light" href="#mairi">Conheça a Mairi</a>
-                    <a class="btn ghost" href="#cta" data-wa>Converse conosco</a>
+        <!-- 01 HEADLINE -->
+        <section id="hero" aria-labelledby="t1">
+            <div class="hbg" aria-hidden="true">
+                <div class="hsl on"
+                    style="background-image:url(https://images.unsplash.com/photo-1591081658714-f576fb7ea3ed?auto=format&fit=crop&w=1920&q=70),linear-gradient(135deg,#5b3118,#2A1D1A)">
+                </div>
+                <div class="hsl"
+                    style="background-image:url(https://images.unsplash.com/photo-1769795082154-b54de3ca81f9?auto=format&fit=crop&w=1920&q=70),linear-gradient(160deg,#3a2a24,#1c2a4a)">
+                </div>
+                <div class="hsl"
+                    style="background-image:url(https://images.unsplash.com/photo-1769794305664-cfb57957246f?auto=format&fit=crop&w=1920&q=70),linear-gradient(200deg,#4a3d00,#2A1D1A)">
+                </div>
+                <div class="hsl"
+                    style="background-image:url(https://images.unsplash.com/photo-1593069567131-53a0614dde1d?auto=format&fit=crop&w=1920&q=70),linear-gradient(120deg,#6b1a0c,#2A1D1A)">
                 </div>
             </div>
-            <div class="hero-img"><img src="img/hero.jpg" alt="Rio amazônico" fetchpriority="high"></div>
-        </section>
-
-        <!-- 2 · VÍDEO VSL -->
-        <section id="video" class="sec cream">
-            <div class="wrap">
-                <p class="eyebrow" data-r>Assista</p>
-                <h2 class="ttl" data-r>Conheça a Mairi</h2>
-                <div class="vsl" id="vsl" data-r>
-                    <img src="img/hero.jpg" alt="" loading="lazy">
-                    <button class="play" id="play" aria-label="Assistir ao vídeo"><i data-lucide="play"></i></button>
+            <div class="hdots" role="group" aria-label="Imagens do topo"><button type="button" aria-label="Imagem 1"
+                    class="on" aria-current="true"></button><button type="button" aria-label="Imagem 2"></button><button
+                    type="button" aria-label="Imagem 3"></button><button type="button" aria-label="Imagem 4"></button>
+            </div>
+            <div class="w hg">
+                <div>
+                    <div class="eye rv">Marketing com raiz amazônica</div>
+                    <h1 id="t1"><span class="sk" style="--d:.1s"><span>Conectamos histórias,</span></span><span
+                            class="sk" style="--d:.25s"><span><em>territórios</em> e negócios</span></span><span
+                            class="sk" style="--d:.4s"><span>a novas oportunidades.</span></span></h1>
+                    <p class="lead rv" style="--d:.5s">A Mairi desenvolve estratégias de marketing para fortalecer
+                        empreendimentos tradicionais da Amazônia, valorizando identidades, conhecimentos e
+                        potencialidades locais.</p>
+                    <div class="ctas rv" style="--d:.65s"><a class="btn p" href="#servicos">Conheça nossas soluções
+                            <svg>
+                                <use href="#arrow" />
+                            </svg></a><a class="btn s" href="#contato" data-wa>Fale com a Mairi</a></div>
                 </div>
-                <p class="note" id="vnote" aria-live="polite"></p>
             </div>
         </section>
 
-        <!-- 3 · LEAD -->
-        <section id="mairi" class="sec white crv" style="--prev:var(--cream)">
-            <div class="wrap">
-                <div class="split">
-                    <div>
-                        <p class="eyebrow" data-r>Quem somos</p>
-                        <h2 data-r>Marketing com raízes. Estratégia com propósito.</h2>
-                        <p class="body" data-r>A Mairi é uma consultoria em marketing que nasce da conexão entre
-                            conhecimento, identidade cultural e desenvolvimento sustentável.</p>
-                        <p class="body" data-r>Nossa atuação busca fortalecer empreendimentos dos Povos Tradicionais das
-                            Amazônias, valorizando seus saberes, suas histórias e suas potencialidades.</p>
-                        <div class="chips" data-r>
-                            <span class="chip"><i data-lucide="book-open"></i>Conhecimento</span>
-                            <span class="chip"><i data-lucide="fingerprint"></i>Identidade cultural</span>
-                            <span class="chip"><i data-lucide="sprout"></i>Desenvolvimento sustentável</span>
+        <div class="mq" aria-hidden="true">
+            <div><span>Identidade</span><i>✦</i><span>Território</span><i>✦</i><span>Saberes
+                    tradicionais</span><i>✦</i><span>Mercados justos</span><i>✦</i><span>Marketing
+                    ético</span><i>✦</i><span>Conexão</span><i>✦</i><span>Identidade</span><i>✦</i><span>Território</span><i>✦</i><span>Saberes
+                    tradicionais</span><i>✦</i><span>Mercados justos</span><i>✦</i><span>Marketing
+                    ético</span><i>✦</i><span>Conexão</span><i>✦</i></div>
+        </div>
+
+        <!-- 02 VSL -->
+        <section id="video" aria-labelledby="t2">
+            <div class="w">
+                <div class="eye rv" style="justify-content:center">Apresentação institucional</div>
+                <h2 id="t2" class="rv">Mais do que marketing. Conexões que transformam oportunidades.</h2>
+                <p class="lead rv">Veja como a Mairi une estratégia de mercado, respeito aos saberes tradicionais e
+                    valorização da identidade de cada território.</p>
+                <div class="player rv">
+                    <div class="pl">Vídeo institucional da Mairi</div>
+                    <button class="play" id="play" aria-label="Reproduzir vídeo institucional"><svg viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path d="M6 4l14 8-14 8z" />
+                        </svg></button>
+                    <div class="msg" id="msg" role="status">
+                        <div>
+                            <p>O vídeo institucional será publicado em breve.<br><small>Espaço reservado: adicione o
+                                    arquivo em /assets/videos.</small></p><button class="btn s" id="cl"
+                                style="border-color:#fff">Fechar</button>
                         </div>
                     </div>
-                    <figure class="arch" data-r style="--dl:150ms"><img src="img/sobre.jpg"
-                            alt="Fotografia documental — Amazônia" loading="lazy"></figure>
-                </div>
-                <p class="quote" data-r>Transformar identidade em valor. <em>Conectar territórios a oportunidades.</em>
-                </p>
-            </div>
-        </section>
-
-        <!-- 4 · HISTÓRIA -->
-        <section id="historia" class="sec blue crv" style="--prev:#fff">
-            <div class="wrap">
-                <p class="eyebrow" data-r>A origem de Mairi</p>
-                <h2 data-r>Uma história que começa nas águas.</h2>
-                <div class="txt">
-                    <p data-r>Mairi era o nome ancestral da região de Belém do Pará antes da chegada portuguesa em 1616.
-                    </p>
-                    <p data-r>Na cultura Tupinambá e Nheengatu, o nome remete a cidade ou velha.</p>
-                    <p data-r>A narrativa da marca associa Mairi à transmissão de conhecimentos e à transformação
-                        social.</p>
-                </div>
-                <div class="duo">
-                    <figure data-r><img src="img/origem-passado.jpg" alt="Belém, memória histórica" loading="lazy">
-                        <figcaption><i data-lucide="landmark"></i>Antes de 1616</figcaption>
-                    </figure>
-                    <figure data-r style="--dl:120ms"><img src="img/origem-presente.jpg" alt="Belém hoje"
-                            loading="lazy">
-                        <figcaption><i data-lucide="waves"></i>Hoje</figcaption>
-                    </figure>
                 </div>
             </div>
         </section>
 
-        <!-- 5 · PITCH -->
-        <section id="olhar" class="sec sand crv" style="--prev:var(--blue)">
-            <div class="wrap">
-                <p class="eyebrow" data-r>Nosso diferencial</p>
-                <h2 data-r>Mais do que comunicar. É conectar realidades.</h2>
-                <p class="lead" data-r>A Mairi une estratégias de negócios ao conhecimento especializado de comunidades
-                    tradicionais urbanas e rurais, traduzindo impacto socioambiental em valor de marca.</p>
-                <div class="cols">
-                    <div data-r><i data-lucide="fingerprint"></i>
-                        <article>
-                            <h3>Identidade</h3>
-                            <p>Valorização das raízes, histórias e conhecimentos tradicionais.</p>
-                        </article>
-                    </div>
-                    <div data-r style="--dl:120ms"><i data-lucide="compass"></i>
-                        <article>
-                            <h3>Estratégia</h3>
-                            <p>Planejamento de marketing conectado às realidades dos empreendimentos.</p>
-                        </article>
-                    </div>
-                    <div data-r style="--dl:240ms"><i data-lucide="link"></i>
-                        <article>
-                            <h3>Conexão</h3>
-                            <p>Aproximação entre comunidades, consumidores e novos mercados.</p>
-                        </article>
+        <!-- 03 LEAD -->
+        <section id="desafios" aria-labelledby="t3">
+            <div class="w">
+                <div class="eye rv">Você se reconhece aqui?</div>
+                <h2 id="t3" class="rv" style="max-width:16ch">Seu empreendimento tem uma história que merece alcançar
+                    novos mercados.</h2>
+                <p class="lead rv">Produzir bem não basta quando o mercado não chega até você. Estes são os obstáculos
+                    que a Mairi ajuda a superar.</p>
+                <div class="dg" id="dg"></div>
+                <div class="big rv">
+                    <div class="num"><span data-c="17">17</span><small>/21</small></div>
+                    <div>
+                        <p><strong>17 dos 21 empreendimentos mapeados</strong> comercializam seus produtos apenas no
+                            mercado local. A produção existe. O que falta é o caminho até o mercado.</p>
+                        <p style="margin-top:.8rem;font-size:.85rem;opacity:.6">Diagnóstico mercadológico da Mairi,
+                            2025.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6 · EVIDÊNCIA -->
-        <section id="prova" class="sec cream crv" style="--prev:var(--sand)">
-            <div class="wrap">
-                <p class="eyebrow" data-r>Nosso público</p>
-                <h2 data-r>Histórias, territórios e potencialidades.</h2>
-                <ul class="pub">
-                    <li><span class="ic"><i data-lucide="anchor"></i></span><b>Ribeirinhos</b><img
-                            src="img/ribeirinhos.jpg" alt="Ribeirinhos" loading="lazy"></li>
-                    <li><span class="ic"><i data-lucide="fish"></i></span><b>Pescadores</b><img src="img/pescadores.jpg"
-                            alt="Pescadores" loading="lazy"></li>
-                    <li><span class="ic"><i data-lucide="sprout"></i></span><b>Agricultores familiares</b><img
-                            src="img/agricultores.jpg" alt="Agricultores familiares" loading="lazy"></li>
-                    <li><span class="ic"><i data-lucide="trees"></i></span><b>Extrativistas</b><img
-                            src="img/extrativistas.jpg" alt="Extrativistas" loading="lazy"></li>
-                    <li><span class="ic"><i data-lucide="users"></i></span><b>Quilombolas</b><img
-                            src="img/quilombolas.jpg" alt="Quilombolas" loading="lazy"></li>
-                    <li><span class="ic"><i data-lucide="store"></i></span><b>Empreendimentos comunitários</b><img
-                            src="img/comunitarios.jpg" alt="Empreendimentos comunitários" loading="lazy"></li>
-                </ul>
-                <h2 class="ttl sub2" data-r>Missão, visão e valores</h2>
-                <div class="cols">
-                    <div data-r><i data-lucide="target"></i>
-                        <article>
-                            <h3>Missão</h3>
-                            <p>Oferecer consultoria de marketing aos empreendimentos dos Povos Tradicionais das
-                                Amazônias.</p>
-                        </article>
-                    </div>
-                    <div data-r style="--dl:120ms"><i data-lucide="eye"></i>
-                        <article>
-                            <h3>Visão</h3>
-                            <p>Ser referência em consultoria de marketing e marketing digital para empreendimentos
-                                tradicionais na Amazônia.</p>
-                        </article>
-                    </div>
-                    <div data-r style="--dl:240ms"><i data-lucide="gem"></i>
-                        <article>
-                            <h3>Valores</h3>
-                            <p>Ética e transparência, inovação e foco no cliente, sustentabilidade.</p>
-                        </article>
-                    </div>
-                </div>
-                <div class="deps" id="dep" hidden></div>
-            </div>
-        </section>
-
-        <!-- 7 · OFERTA -->
-        <section id="atuacao" class="sec white crv" style="--prev:var(--cream)">
-            <div class="wrap">
-                <p class="eyebrow" data-r>O que fazemos</p>
-                <h2 class="ttl" data-r>Conexões que geram oportunidades</h2>
-                <div class="cols">
-                    <div data-r><i data-lucide="megaphone"></i>
-                        <article><span class="n">01</span>
-                            <h3>Planejamento de Marketing</h3>
-                            <p>Desenvolvemos estratégias de marketing e marketing digital para estruturar canais de
-                                comunicação e ampliar as possibilidades de inserção mercadológica.</p>
-                        </article>
-                    </div>
-                    <div data-r style="--dl:120ms"><i data-lucide="share-2"></i>
-                        <article><span class="n">02</span>
-                            <h3>Conteúdo para Mídias Sociais</h3>
-                            <p>Criamos estratégias de conteúdo que valorizam identidades, histórias e saberes locais,
-                                fortalecendo a presença e o posicionamento dos empreendimentos.</p>
-                        </article>
-                    </div>
-                    <div data-r style="--dl:240ms"><i data-lucide="heart-handshake"></i>
-                        <article><span class="n">03</span>
-                            <h3>Fidelização e Pós-venda</h3>
-                            <p>Planejamos ações para fortalecer relacionamentos comerciais, aproximar consumidores e
-                                construir conexões duradouras.</p>
-                        </article>
-                    </div>
+        <!-- 04 HISTÓRIA -->
+        <section id="historia" aria-labelledby="t4">
+            <div class="w hs">
+                <div class="photo rv"><svg viewBox="0 0 300 400" preserveAspectRatio="none">
+                        <g fill="none" stroke="#fff" stroke-opacity=".35">
+                            <path d="M-10 300C60 260 110 340 170 300S260 260 310 300" />
+                            <path d="M-10 330C60 290 110 370 170 330S260 290 310 330" />
+                            <path d="M-10 360C60 320 110 400 170 360S260 320 310 360" />
+                        </g>
+                        <use href="#spica" x="125" y="90" width="50" height="50" style="color:#fff" />
+                    </svg><span>Espaço reservado para fotografia de Belém do Pará</span></div>
+                <div>
+                    <div class="eye rv">Nossa história</div>
+                    <h2 id="t4" class="rv">Uma história que nasce das raízes amazônicas.</h2>
+                    <p class="rv">Mairi é um nome de origem ancestral, ligado à região de Belém e à ideia de transmitir
+                        conhecimentos para transformar realidades. É desse território, e da força de quem vive nele, que
+                        nasce a nossa atuação.</p>
+                    <ul class="tl">
+                        <li class="rv"><b>Origem do nome.</b> Um nome ancestral, que remete à circulação de saberes
+                            entre gerações.</li>
+                        <li class="rv"><b>Belém do Pará.</b> Território de origem da Mairi, representado pela estrela
+                            Spica na identidade visual.</li>
+                        <li class="rv"><b>Povos tradicionais.</b> Atuação voltada a empreendimentos dos Povos
+                            Tradicionais das Amazônias.</li>
+                        <li class="rv"><b>Conhecimentos locais.</b> Saberes tradicionais tratados como ativo de marca,
+                            não como detalhe.</li>
+                        <li class="rv"><b>Transformação social.</b> Marketing como ferramenta de autonomia e acesso a
+                            mercados justos.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- 8 · ACORDO -->
-        <section id="cta" class="sec redsec crv" style="--prev:#fff">
-            <div class="wrap">
-                <h2 data-r>Todo território tem uma história. Toda história pode alcançar novos caminhos.</h2>
-                <p class="lead" data-r>Vamos construir novas conexões e transformar potencialidades em oportunidades?
-                </p>
-                <a class="btn light" data-r data-wa href="#contato">Entre em contato</a>
-                <div class="chips on-dark" data-r>
-                    <span class="chip"><i data-lucide="shield-check"></i>Ética e transparência</span>
-                    <span class="chip"><i data-lucide="lightbulb"></i>Inovação e foco no cliente</span>
-                    <span class="chip"><i data-lucide="leaf"></i>Sustentabilidade</span>
+        <!-- MANIFESTO -->
+        <section class="man" aria-labelledby="tm">
+            <div class="w">
+                <div class="eye rv">Manifesto</div>
+                <h2 id="tm" class="rv">Cultura não é detalhe. É o que torna um negócio <em>impossível de copiar.</em>
+                </h2>
+                <p class="rv">Na Amazônia, cada produto carrega território, saber e história. A Mairi transforma isso em
+                    posicionamento, presença e relações comerciais que permanecem.</p>
+            </div>
+        </section>
+
+        <!-- 05 PITCH -->
+        <section id="solucao" aria-labelledby="t5">
+            <div class="w">
+                <div class="eye rv">A solução</div>
+                <h2 id="t5" class="rv" style="max-width:15ch">Transformamos potencialidades em estratégias de mercado.
+                </h2>
+                <p class="lead rv">A Mairi é uma consultoria especializada em marketing para empreendimentos dos Povos
+                    Tradicionais das Amazônias. Estratégia com método, comunicação com identidade e relacionamento que
+                    dura.</p>
+                <div class="pg">
+                    <article class="pil rv"><span class="num">01</span><svg class="i" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.500">
+                            <path d="M3 20h18M6 16V9m6 7V4m6 12v-5" />
+                        </svg>
+                        <h3>Planejamento estratégico</h3>
+                        <p>Estratégias de marketing e marketing digital, estruturação de canais e planejamento de
+                            inserção mercadológica.</p>
+                    </article>
+                    <article class="pil rv" style="--d:.12s"><span class="num">02</span><svg class="i"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.500">
+                            <path d="M4 5h16v11H9l-5 4z" />
+                        </svg>
+                        <h3>Comunicação e posicionamento</h3>
+                        <p>Conteúdo para mídias sociais que valoriza identidades, histórias e conhecimentos locais.</p>
+                    </article>
+                    <article class="pil rv" style="--d:.24s"><span class="num">03</span><svg class="i"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.500">
+                            <path d="M12 21s-8-5-8-11a4.500 4.500 0 018-2.700A4.500 4.500 0 0120 10c0 6-8 11-8 11z" />
+                        </svg>
+                        <h3>Relacionamento e fidelização</h3>
+                        <p>Estratégias de fidelização e pós-venda para fortalecer relações comerciais duradouras.</p>
+                    </article>
+                </div>
+                <div class="diff rv"><svg viewBox="0 0 24 24">
+                        <use href="#spica" />
+                    </svg>
+                    <p>A Mairi une estratégias de negócios ao conhecimento especializado das comunidades tradicionais,
+                        traduzindo impacto socioambiental em valor de marca.</p>
                 </div>
             </div>
         </section>
 
-        <!-- 9 · Q&A -->
-        <section id="qa" class="sec cream crv" style="--prev:var(--red)">
-            <div class="wrap">
-                <p class="eyebrow" data-r>Perguntas e respostas</p>
-                <h2 class="ttl" data-r>Tire suas dúvidas</h2>
-                <div class="faq" data-r>
-                    <details>
-                        <summary>O que é a Mairi?</summary>
-                        <p>A Mairi é uma consultoria em marketing que nasce da conexão entre conhecimento, identidade
-                            cultural e desenvolvimento sustentável.</p>
-                    </details>
-                    <details>
-                        <summary>Para quem a Mairi trabalha?</summary>
-                        <p>Para empreendimentos dos Povos Tradicionais das Amazônias: ribeirinhos, pescadores,
-                            agricultores familiares, extrativistas, quilombolas e empreendimentos comunitários.</p>
-                    </details>
-                    <details>
-                        <summary>O que significa o nome Mairi?</summary>
-                        <p>Mairi era o nome ancestral da região de Belém do Pará antes da chegada portuguesa em 1616. Na
-                            cultura Tupinambá e Nheengatu, o nome remete a cidade ou velha.</p>
-                    </details>
-                    <details>
-                        <summary>Quais serviços a Mairi oferece?</summary>
-                        <p>Planejamento de Marketing, Conteúdo para Mídias Sociais e Fidelização e Pós-venda.</p>
-                    </details>
-                    <details>
-                        <summary>Qual é o diferencial da Mairi?</summary>
-                        <p>A Mairi une estratégias de negócios ao conhecimento especializado de comunidades tradicionais
-                            urbanas e rurais, traduzindo impacto socioambiental em valor de marca.</p>
-                    </details>
-                    <details>
-                        <summary>Qual é a missão e a visão da Mairi?</summary>
-                        <p>Missão: oferecer consultoria de marketing aos empreendimentos dos Povos Tradicionais das
-                            Amazônias. Visão: ser referência em consultoria de marketing e marketing digital para
-                            empreendimentos tradicionais na Amazônia.</p>
-                    </details>
-                    <details>
-                        <summary>Onde fica a Mairi?</summary>
-                        <p>Em Belém, Pará.</p>
-                    </details>
-                    <details>
-                        <summary>Como entro em contato?</summary>
-                        <p>Use o botão “Entre em contato” desta página ou os canais listados no rodapé.</p>
-                    </details>
+        <!-- 06 EVIDÊNCIAS -->
+        <section id="evidencias" class="dark" aria-labelledby="t6">
+            <div class="w">
+                <div class="eye rv">Evidências</div>
+                <h2 id="t6" class="rv" style="max-width:16ch">Estratégia construída a partir da realidade amazônica.
+                </h2>
+                <div class="ev">
+                    <div class="rv">
+                        <div class="kpi"><span data-c="21">0</span></div>
+                        <p class="lead">empreendimentos comunitários mapeados em 2025 na investigação mercadológica da
+                            Mairi.</p>
+                    </div>
+                    <div id="bars" class="rv">
+                        <div class="bar">
+                            <div class="t"><span>Associações</span><b><span data-c="57">0</span>%</b></div>
+                            <div class="tr">
+                                <div class="f" data-w="57"></div>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div class="t"><span>Cooperativas</span><b><span data-c="31">0</span>%</b></div>
+                            <div class="tr">
+                                <div class="f" data-w="31"></div>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div class="t"><span>Empresas privadas</span><b><span data-c="12">0</span>%</b></div>
+                            <div class="tr">
+                                <div class="f" data-w="12"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="dif" id="dif"></ul>
+                <p class="note rv">Fonte: investigação mercadológica da Mairi, 2025.</p>
+            </div>
+        </section>
+
+        <!-- PARA QUEM -->
+        <section id="publico" aria-labelledby="tp">
+            <div class="w">
+                <div class="eye rv">Para quem</div>
+                <h2 id="tp" class="rv" style="max-width:16ch">Para quem produz com identidade e quer ir além do mercado
+                    local.</h2>
+                <p class="lead rv">A Mairi atende empreendimentos dos Povos Tradicionais das Amazônias, em suas
+                    diferentes formas de organização.</p>
+                <div class="pq">
+                    <article class="pc rv"><small>57% dos mapeados</small>
+                        <div class="pct">Associações</div>
+                        <p>Organizações coletivas que reúnem produtores e produtoras em torno de objetivos comuns.</p>
+                    </article>
+                    <article class="pc rv" style="--d:.12s"><small>31% dos mapeados</small>
+                        <div class="pct">Cooperativas</div>
+                        <p>Estruturas que organizam a produção e a comercialização de forma compartilhada.</p>
+                    </article>
+                    <article class="pc rv" style="--d:.24s"><small>12% dos mapeados</small>
+                        <div class="pct">Empresas privadas</div>
+                        <p>Negócios com identidade amazônica que buscam ampliar sua presença e seus mercados.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 07 OFERTA -->
+        <section id="servicos" aria-labelledby="t7">
+            <div class="w">
+                <div class="eye rv">Serviços</div>
+                <h2 id="t7" class="rv" style="max-width:17ch">Soluções estratégicas para fortalecer negócios e ampliar
+                    conexões.</h2>
+                <div class="og">
+                    <article class="of rv"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.500">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 7v5l3 2" />
+                        </svg>
+                        <h3>Planejamento de Marketing e Marketing Digital</h3>
+                        <p>Estruturação de canais, definição de estratégias e planejamento de inserção mercadológica.
+                        </p><a class="btn s" href="#contato"
+                            data-wa="Planejamento de Marketing e Marketing Digital">Solicitar conversa</a>
+                    </article>
+                    <article class="of rv" style="--d:.12s"><svg class="i" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.500">
+                            <rect x="3" y="4" width="18" height="14" rx="2" />
+                            <path d="M8 21h8M3 14l5-4 4 3 4-5 5 4" />
+                        </svg>
+                        <h3>Criação de Conteúdo para Mídias Sociais</h3>
+                        <p>Desenvolvimento de conteúdos que valorizam identidades, histórias e saberes locais.</p><a
+                            class="btn s" href="#contato" data-wa="Criação de Conteúdo para Mídias Sociais">Solicitar
+                            conversa</a>
+                    </article>
+                    <article class="of rv" style="--d:.24s"><svg class="i" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.500">
+                            <path d="M17 1l4 4-4 4M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4m14-2v2a4 4 0 01-4 4H3" />
+                        </svg>
+                        <h3>Planejamento de Fidelização e Pós-venda</h3>
+                        <p>Estratégias para fortalecer o relacionamento com consumidores e construir relações comerciais
+                            duradouras.</p><a class="btn s" href="#contato"
+                            data-wa="Planejamento de Fidelização e Pós-venda">Solicitar conversa</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESSO -->
+        <section id="processo" aria-labelledby="tr" style="background:var(--off)">
+            <div class="w">
+                <div class="eye rv">Como trabalhamos</div>
+                <h2 id="tr" class="rv" style="max-width:14ch">Da conversa à presença no mercado.</h2>
+                <div class="ps">
+                    <article class="st rv">
+                        <div class="o">01</div>
+                        <h3>Escuta</h3>
+                        <p>Conhecemos seu empreendimento, sua história e seus desafios.</p>
+                    </article>
+                    <article class="st rv" style="--d:.1s">
+                        <div class="o">02</div>
+                        <h3>Diagnóstico</h3>
+                        <p>Analisamos seu contexto e as oportunidades de mercado.</p>
+                    </article>
+                    <article class="st rv" style="--d:.2s">
+                        <div class="o">03</div>
+                        <h3>Estratégia</h3>
+                        <p>Definimos canais, posicionamento e o planejamento de inserção mercadológica.</p>
+                    </article>
+                    <article class="st rv" style="--d:.3s">
+                        <div class="o">04</div>
+                        <h3>Relacionamento</h3>
+                        <p>Planejamos comunicação e fidelização para manter as conexões vivas.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 08 CONVERSÃO -->
+        <section id="contato" aria-labelledby="t8">
+            <div class="w cv">
+                <div>
+                    <div class="eye rv">Contato</div>
+                    <h2 id="t8" class="rv">Seu próximo passo pode começar com uma <em>conversa.</em></h2>
+                    <p class="lead rv">Vamos conhecer seu empreendimento, compreender seus desafios e identificar
+                        oportunidades para fortalecer sua presença no mercado.</p>
+                    <a class="btn wa rv" href="#" data-wa target="_blank" rel="noopener"><svg
+                            style="width:20px;height:20px">
+                            <use href="#wa" />
+                        </svg>Fale com a Mairi pelo WhatsApp</a>
+                    <p class="fin rv">Sem compromisso. Começamos ouvindo você.</p>
+                </div>
+                <form class="fm rv" id="fm" novalidate aria-labelledby="tf">
+                    <h3 id="tf">Conte sobre seu empreendimento</h3>
+                    <p class="fs">Preencha os dados e continue a conversa pelo WhatsApp.</p>
+                    <div class="fg"><label for="f1">Seu nome *</label><input id="f1" name="nome" autocomplete="name"
+                            required></div>
+                    <div class="fg"><label for="f2">Empreendimento *</label><input id="f2" name="empreendimento"
+                            required></div>
+                    <div class="r2">
+                        <div class="fg"><label for="f3">Cidade ou região</label><input id="f3" name="regiao"
+                                autocomplete="address-level2"></div>
+                        <div class="fg"><label for="f4">WhatsApp ou e-mail *</label><input id="f4" name="contato"
+                                required></div>
+                    </div>
+                    <div class="fg"><label for="f5">Serviço de interesse</label><select id="f5" name="servico">
+                            <option value="">Selecione</option>
+                            <option>Planejamento de Marketing e Marketing Digital</option>
+                            <option>Criação de Conteúdo para Mídias Sociais</option>
+                            <option>Planejamento de Fidelização e Pós-venda</option>
+                            <option>Ainda não sei, quero conversar</option>
+                        </select></div>
+                    <div class="fg"><label for="f6">Mensagem</label><textarea id="f6" name="mensagem"
+                            rows="3"></textarea></div>
+                    <input class="hp" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <label class="ck"><input type="checkbox" id="f7"> Concordo em ser contatado(a) pela Mairi sobre esta
+                        solicitação.</label>
+                    <button class="btn wa" type="submit">Enviar mensagem <svg>
+                            <use href="#arrow" />
+                        </svg></button>
+                    <p class="fst" id="fst" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+
+        <!-- 09 Q&A -->
+        <section id="faq" aria-labelledby="t9">
+            <div class="w fq">
+                <div class="fh">
+                    <div class="eye rv">Dúvidas</div>
+                    <h2 id="t9" class="rv">Perguntas frequentes.</h2>
+                    <p class="rv">Não encontrou o que procurava? Fale diretamente com a equipe da Mairi.</p>
+                    <a class="btn p rv" href="#contato" data-wa="minhas dúvidas">Tirar dúvidas no WhatsApp</a>
+                </div>
+                <div class="faq" id="faqs"></div>
+            </div>
+        </section>
+
+        <!-- INSTITUCIONAL -->
+        <section id="inst" aria-labelledby="t10">
+            <div class="w">
+                <div class="eye rv">Identidade</div>
+                <h2 id="t10" class="rv">Missão, visão e valores.</h2>
+                <div class="ig">
+                    <div class="rv">
+                        <h3>Missão</h3>
+                        <p>Oferecer consultoria de marketing aos empreendimentos dos Povos Tradicionais das Amazônias.
+                        </p>
+                    </div>
+                    <div class="rv" style="--d:.12s">
+                        <h3>Visão</h3>
+                        <p>Ser referência em consultoria de marketing e marketing digital para empreendimentos
+                            tradicionais na Amazônia.</p>
+                    </div>
+                    <div class="rv" style="--d:.24s">
+                        <h3>Valores</h3>
+                        <ul>
+                            <li>Ética e transparência</li>
+                            <li>Inovação</li>
+                            <li>Foco no cliente</li>
+                            <li>Sustentabilidade</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer id="contato" class="crv" style="--prev:var(--cream)">
-        <div class="wrap">
-            <a class="logo" href="#inicio" aria-label="Mairi — início"><img src="img/LOGO - MAIRI (white).png"
-                    alt="Mairi"><span>MAIRI</span></a>
-            <p class="desc">Consultoria em marketing para empreendimentos dos Povos Tradicionais das Amazônias.</p>
-            <ul class="contact">
-                <li><i data-lucide="message-circle"></i><span id="wa-line"></span></li>
-                <li><i data-lucide="share-2"></i><span id="soc"></span></li>
-                <li><i data-lucide="map-pin"></i>Belém, Pará</li>
-            </ul>
-            <p class="end">MAIRI — Rios que conectam.</p>
-            <p class="fine">© <span id="yr"></span> Mairi Consultoria em Marketing.</p>
+    <footer>
+        <div class="w ft">
+            <div><a href="#hero" class="logo"><img class="lg" src="img/LOGO - MAIRI (brown).png" alt="MAIRI" width="150"
+                        height="32"></a>
+                <p>Consultoria de marketing para empreendimentos dos Povos Tradicionais das Amazônias.</p>
+            </div>
+            <div class="fl"><a href="#desafios">Desafios</a><a href="#solucao">Soluções</a><a
+                    href="#servicos">Serviços</a><a href="#faq">Perguntas frequentes</a></div>
+            <div>
+                <p>© <span id="yr"></span> Mairi Consultoria em Marketing</p>
+                <p>Amazônia, Brasil</p>
+            </div>
         </div>
     </footer>
 
-    <a class="fab" href="#contato" data-wa aria-label="Falar pelo WhatsApp"><i data-lucide="message-circle"></i></a>
+    <a class="fw" href="#" data-wa target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp"><svg>
+            <use href="#wa" />
+        </svg></a>
 
-    <script src="js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lucide@0.460.0/dist/umd/lucide.min.js"></script>
-    <script>if (window.lucide) lucide.createIcons()</script>
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>
