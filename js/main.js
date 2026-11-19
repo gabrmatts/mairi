@@ -1,12 +1,12 @@
 /* MAIRI — interações (JavaScript puro) */
 
-/* CONFIGURAÇÃO — preencha antes de publicar.
-   whatsapp: DDI + DDD + número, só dígitos. Ex.: "5591900000000"
-   social: ex.: { instagram: "https://...", linkedin: "https://..." } */
+/* CONFIGURAÇÃO — preencha antes de publicar */
 const CONFIG = {
-    whatsapp: "",
-    mensagem: "Olá! Gostaria de conversar com a Mairi.",
-    social: {}
+  whatsapp: "",                       // DDI+DDD+número, só dígitos. Ex.: "5591900000000"
+  mensagem: "Olá! Gostaria de conversar com a Mairi.",
+  video: "",                          // link do YouTube/Vimeo ou arquivo .mp4 (ex.: "video/mairi.mp4")
+  social: {},                         // ex.: { instagram: "https://...", linkedin: "https://..." }
+  depoimentos: []                     // ex.: [{ texto: "...", nome: "Nome, empreendimento" }] — só reais
 };
 
 const $ = (s, c = document) => c.querySelector(s);
@@ -15,9 +15,9 @@ const rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* imagens ausentes: esconde e deixa o fundo colorido (logo vira texto) */
 $$('img').forEach(i => {
-    const miss = () => i.classList.add('miss');
-    i.addEventListener('error', miss);
-    if (i.complete && !i.naturalWidth) miss();
+  const miss = () => i.classList.add('miss');
+  i.addEventListener('error', miss);
+  if (i.complete && !i.naturalWidth) miss();
 });
 
 /* ano, WhatsApp e redes */
@@ -28,100 +28,70 @@ $$('[data-wa]').forEach(a => { if (wa) { a.href = wa; a.target = '_blank'; a.rel
 $('#wa-line').innerHTML = wa ? `<a href="${wa}" target="_blank" rel="noopener">WhatsApp: +${num}</a>` : 'WhatsApp: em breve';
 const soc = Object.entries(CONFIG.social);
 $('#soc').innerHTML = soc.length
-    ? soc.map(([k, v]) => `<a href="${v}" target="_blank" rel="noopener" style="text-transform:capitalize">${k}</a>`).join(' · ')
-    : 'Redes sociais: em breve';
+  ? soc.map(([k, v]) => `<a href="${v}" target="_blank" rel="noopener" style="text-transform:capitalize">${k}</a>`).join(' · ')
+  : 'Redes sociais: em breve';
+
+/* depoimentos reais (bloco só aparece se houver) */
+if (CONFIG.depoimentos.length) {
+  const box = $('#dep');
+  CONFIG.depoimentos.forEach(d => {
+    const f = document.createElement('figure');
+    const q = document.createElement('blockquote'); q.textContent = d.texto;
+    const c = document.createElement('cite'); c.textContent = d.nome;
+    f.append(q, c); box.append(f);
+  });
+  box.hidden = false;
+}
+
+/* vídeo (VSL) */
+const vsl = $('#vsl'), note = $('#vnote');
+if (!CONFIG.video) note.textContent = 'Vídeo institucional em breve.';
+$('#play').addEventListener('click', () => {
+  const u = CONFIG.video;
+  if (!u) { note.textContent = 'Vídeo institucional em breve.'; return; }
+  const yt = u.match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/), vm = u.match(/vimeo\.com\/(\d+)/);
+  vsl.classList.add('on');
+  vsl.innerHTML = yt
+    ? `<iframe src="https://www.youtube-nocookie.com/embed/${yt[1]}?autoplay=1&rel=0" title="Vídeo institucional da Mairi" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`
+    : vm
+      ? `<iframe src="https://player.vimeo.com/video/${vm[1]}?autoplay=1" title="Vídeo institucional da Mairi" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`
+      : `<video src="${u}" controls autoplay playsinline></video>`;
+});
 
 /* menu mobile */
 const bg = $('#bg'), menu = $('#menu');
 const toggleMenu = open => {
-    menu.classList.toggle('open', open);
-    bg.setAttribute('aria-expanded', open);
-    bg.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
-    menu.setAttribute('aria-hidden', !open);
-    document.body.style.overflow = open ? 'hidden' : '';
+  menu.classList.toggle('open', open);
+  bg.setAttribute('aria-expanded', open);
+  bg.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  menu.setAttribute('aria-hidden', !open);
+  document.body.style.overflow = open ? 'hidden' : '';
 };
 bg.addEventListener('click', () => toggleMenu(!menu.classList.contains('open')));
 $$('a', menu).forEach(a => a.addEventListener('click', () => toggleMenu(false)));
 addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
 
-/* títulos: palavra por palavra */
-function split(el) {
-    let i = 0;
-    const walk = n => [...n.childNodes].forEach(c => {
-        if (c.nodeType === 3) {
-            const frag = document.createDocumentFragment();
-            c.textContent.split(/(\s+)/).forEach(t => {
-                if (!t) return;
-                if (/^\s+$/.test(t)) { frag.append(' '); return; }
-                const w = document.createElement('span'); w.className = 'w';
-                const b = document.createElement('b'); b.textContent = t; b.style.setProperty('--i', i++);
-                w.append(b); frag.append(w);
-            });
-            c.replaceWith(frag);
-        } else walk(c);
-    });
-    walk(el);
-}
-$$('[data-split]').forEach(split);
-
-/* revelação ao entrar na tela */
-const targets = $$('[data-rv],[data-split],[data-mask]');
-if (rm || !('IntersectionObserver' in window)) {
-    targets.forEach(el => el.classList.add('in'));
-} else {
-    const io = new IntersectionObserver(es => es.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    }), { threshold: .15, rootMargin: '0px 0px -6% 0px' });
-    targets.forEach(el => io.observe(el));
+/* entrada suave dos blocos */
+const items = $$('[data-r]');
+if (rm || !('IntersectionObserver' in window)) items.forEach(el => el.classList.add('in'));
+else {
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: .15, rootMargin: '0px 0px -6% 0px' });
+  items.forEach(el => io.observe(el));
 }
 
-/* marquee: duplica o conteúdo para o loop ficar contínuo */
-$$('.marq div').forEach(m => { m.innerHTML += m.innerHTML; });
-
-/* seção ativa no menu */
+/* header, botão flutuante e seção ativa */
+const onScroll = () => {
+  $('#hd').classList.toggle('on', scrollY > 40);
+  document.body.classList.toggle('past', scrollY > 600);
+};
+addEventListener('scroll', onScroll, { passive: true });
+onScroll();
 if ('IntersectionObserver' in window) {
-    const links = $$('nav a');
-    const so = new IntersectionObserver(es => es.forEach(e => {
-        if (e.isIntersecting) links.forEach(a => a.classList.toggle('act', a.getAttribute('href') === '#' + e.target.id));
-    }), { rootMargin: '-45% 0px -50% 0px' });
-    ['inicio', 'mairi', 'atuacao', 'olhar', 'contato'].forEach(id => { const s = document.getElementById(id); if (s) so.observe(s); });
+  const links = $$('nav a');
+  const so = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle('act', a.getAttribute('href') === '#' + e.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  ['mairi', 'atuacao', 'olhar', 'qa', 'contato'].forEach(id => { const s = document.getElementById(id); if (s) so.observe(s); });
 }
-
-/* público: miniatura segue o mouse (desktop) / toque abre a foto (celular) */
-$$('.pub li').forEach(li => {
-    li.addEventListener('mousemove', e => {
-        li.style.setProperty('--x', e.clientX + 28 + 'px');
-        li.style.setProperty('--y', e.clientY - 140 + 'px');
-    });
-    const tap = () => { if (matchMedia('(hover: none)').matches) li.classList.toggle('open'); };
-    li.addEventListener('click', tap);
-    li.addEventListener('keydown', e => { if (e.key === 'Enter') tap(); });
-});
-
-/* rolagem: header, progresso, parallax e antes/depois da origem */
-const header = $('#hd'), prog = $('#prog');
-const speeds = $$('[data-speed]'), scrubs = $$('[data-scrub]');
-if (rm) scrubs.forEach(el => el.style.setProperty('--p', .5));
-let ticking = false;
-function update() {
-    ticking = false;
-    const y = scrollY, vh = innerHeight;
-    header.classList.toggle('on', y > 60);
-    const max = document.documentElement.scrollHeight - vh;
-    prog.style.transform = `scaleX(${max > 0 ? Math.min(1, y / max) : 0})`;
-    if (rm) return;
-    speeds.forEach(el => {
-        const r = el.parentElement.getBoundingClientRect();
-        if (r.bottom < -200 || r.top > vh + 200) return;
-        el.style.translate = `0 ${((r.top + r.height / 2 - vh / 2) * -el.dataset.speed).toFixed(1)}px`;
-    });
-    scrubs.forEach(el => {
-        const r = el.getBoundingClientRect();
-        const p = Math.min(1, Math.max(0, -r.top / (r.height - vh)));
-        el.style.setProperty('--p', p.toFixed(4));
-    });
-}
-const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
-addEventListener('scroll', req, { passive: true });
-addEventListener('resize', req);
-update();
