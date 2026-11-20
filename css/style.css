@@ -1,7 +1,7 @@
 :root {
-    --br: #985327;
-    --bd: #2A1D1A;
-    --bk: #111;
+    --br: #1E7A4A;
+    --bd: #0F2A20;
+    --bk: #0A1410;
     --wh: #fff;
     --off: #F6F6F6;
     --az: #13287E;
@@ -130,7 +130,7 @@ section {
     background: var(--bd);
     border-color: var(--bd);
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px #98532744
+    box-shadow: 0 10px 24px #1E7A4A44
 }
 
 .btn.s {
@@ -173,7 +173,7 @@ header {
 }
 
 header.on {
-    background: #2A1D1Aef;
+    background: #0F2A20ef;
     backdrop-filter: blur(10px)
 }
 
@@ -272,7 +272,7 @@ nav a.act::after {
 /* hero */
 #hero {
     min-height: 100svh;
-    background: radial-gradient(120% 90% at 80% 10%, #5b3118 0%, var(--bd) 55%, var(--bk) 100%);
+    background: radial-gradient(120% 90% at 80% 10%, #134a33 0%, var(--bd) 55%, var(--bk) 100%);
     color: #fff;
     display: flex;
     align-items: center;
@@ -332,7 +332,7 @@ nav a.act::after {
     position: absolute;
     inset: 0;
     border-radius: 200px 200px 16px 16px;
-    background: linear-gradient(160deg, #985327cc, #2A1D1A 70%), var(--bd);
+    background: linear-gradient(160deg, #1E7A4Acc, #0F2A20 70%), var(--bd);
     border: 1px solid #ffffff2e;
     overflow: hidden
 }
@@ -438,16 +438,16 @@ nav a.act::after {
     aspect-ratio: 16/9;
     border-radius: 22px;
     overflow: hidden;
-    background: linear-gradient(135deg, #3a2a24, var(--bk));
+    background: linear-gradient(135deg, #17352a, var(--bk));
     border: 1px solid var(--br);
-    box-shadow: 0 0 0 8px #fff, 0 0 0 9px var(--bg), 0 40px 80px #2A1D1A44
+    box-shadow: 0 0 0 8px #fff, 0 0 0 9px var(--bg), 0 40px 80px #0F2A2044
 }
 
 .player::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(60% 80% at 70% 30%, #98532766, transparent), linear-gradient(#0000, #000a)
+    background: radial-gradient(60% 80% at 70% 30%, #1E7A4A66, transparent), linear-gradient(#0000, #000a)
 }
 
 .play {
@@ -544,7 +544,7 @@ nav a.act::after {
     transform: translateY(-6px);
     border-color: var(--bg);
     background: #fff;
-    box-shadow: 0 20px 40px #2A1D1A18
+    box-shadow: 0 20px 40px #0F2A2018
 }
 
 .card .n {
@@ -687,7 +687,7 @@ nav a.act::after {
 
 .pil:hover {
     transform: translateY(-8px);
-    box-shadow: 0 24px 48px #2A1D1A22
+    box-shadow: 0 24px 48px #0F2A2022
 }
 
 .pil:nth-child(1) {
@@ -1211,7 +1211,7 @@ header.on::before {
 
 .big {
     border-radius: 28px;
-    background: linear-gradient(135deg, var(--bd), #3b2820)
+    background: linear-gradient(135deg, var(--bd), #123428)
 }
 
 .big::after {
@@ -1598,7 +1598,7 @@ header.on::before {
     width: 560px;
     height: 560px;
     transform: translateY(-50%);
-    background: #2A1D1A1f;
+    background: #0F2A201f;
     clip-path: polygon(50% 0, 59% 34%, 92% 25%, 67% 50%, 92% 75%, 59% 66%, 50% 100%, 41% 66%, 8% 75%, 33% 50%, 8% 25%, 41% 34%);
     pointer-events: none
 }
@@ -1633,7 +1633,7 @@ header.on::before {
 
 .pc:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px #2A1D1A18
+    box-shadow: 0 20px 40px #0F2A2018
 }
 
 .pc small {
@@ -1672,7 +1672,7 @@ header.on::before {
 .st:hover {
     border-color: var(--br);
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px #2A1D1A14
+    box-shadow: 0 20px 40px #0F2A2014
 }
 
 .st .o {
@@ -1762,7 +1762,7 @@ header.on::before {
     position: absolute;
     inset: 0;
     border-radius: 999px;
-    background: #2A1D1A66;
+    background: #0F2A2066;
     border: 1px solid #ffffff1c;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
@@ -1771,7 +1771,7 @@ header.on::before {
 }
 
 header.on .nav::before {
-    background: #2A1D1Ad9
+    background: #0F2A20d9
 }
 
 @media(max-width:900px) {
@@ -1831,7 +1831,7 @@ header.on .nav::before {
 }
 
 .btn.p {
-    background: linear-gradient(135deg, #b8662f, #985327)
+    background: linear-gradient(135deg, #2E9C63, #1E7A4A)
 }
 
 .btn {
@@ -1847,7 +1847,7 @@ header.on .nav::before {
     max-height: 800px;
     right: -10%;
     top: -20%;
-    background: radial-gradient(circle, #98532766, transparent 65%);
+    background: radial-gradient(circle, #1E7A4A66, transparent 65%);
     filter: blur(20px);
     animation: gl 14s ease-in-out infinite alternate;
     pointer-events: none
@@ -1885,7 +1885,7 @@ header.on .nav::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 50%), #98532722, transparent 60%);
+    background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 50%), #1E7A4A22, transparent 60%);
     opacity: 0;
     transition: opacity .4s;
     pointer-events: none
@@ -1904,7 +1904,7 @@ header.on .nav::before {
 }
 
 .player {
-    box-shadow: 0 0 0 8px #fff, 0 0 0 9px var(--bg), 0 50px 100px #2A1D1A55
+    box-shadow: 0 0 0 8px #fff, 0 0 0 9px var(--bg), 0 50px 100px #0F2A2055
 }
 
 h2 {
@@ -2087,7 +2087,7 @@ h2 {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, #111f 0%, #2A1D1Ad9 42%, #2A1D1A66 100%), linear-gradient(#0000 55%, #111)
+    background: linear-gradient(90deg, #111f 0%, #0F2A20d9 42%, #0F2A2066 100%), linear-gradient(#0000 55%, #111)
 }
 
 .hdots {
@@ -2127,7 +2127,7 @@ h2 {
 }
 
 .art .frame {
-    background: linear-gradient(160deg, #98532744, #2A1D1A22);
+    background: linear-gradient(160deg, #1E7A4A44, #0F2A2022);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px)
 }
@@ -2153,7 +2153,7 @@ h2 {
     }
 
     .hbg::after {
-        background: linear-gradient(#111b 0%, #2A1D1A88 35%, #111f 100%)
+        background: linear-gradient(#111b 0%, #0F2A2088 35%, #111f 100%)
     }
 
     .hdots {
@@ -2194,7 +2194,7 @@ h2 {
     position: fixed;
     inset: 0;
     z-index: 100;
-    background: radial-gradient(120% 90% at 85% 0%, #5b3118, var(--bd) 55%, var(--bk));
+    background: radial-gradient(120% 90% at 85% 0%, #134a33, var(--bd) 55%, var(--bk));
     color: #fff;
     grid-template-rows: auto 1fr;
     overflow: auto;
@@ -2403,7 +2403,7 @@ h2 {
 .card.hit {
     border-color: var(--br);
     background: #fff;
-    box-shadow: 0 14px 30px #98532722
+    box-shadow: 0 14px 30px #1E7A4A22
 }
 
 .card.hit .n::after {
@@ -2521,7 +2521,7 @@ nav a {
 }
 
 .hbg::after {
-    background: linear-gradient(#111c 0%, #2A1D1A80 50%, #111f 100%)
+    background: linear-gradient(#111c 0%, #0F2A2080 50%, #111f 100%)
 }
 
 .hdots {
@@ -2646,7 +2646,7 @@ nav a {
 
 .player {
     border-radius: 28px;
-    box-shadow: 0 40px 90px #2A1D1A40
+    box-shadow: 0 40px 90px #0F2A2040
 }
 
 /* formulário */
@@ -2767,7 +2767,7 @@ nav a {
     display: none;
     width: 18px;
     height: 18px;
-    border: 2px solid #2A1D1A44;
+    border: 2px solid #0F2A2044;
     border-top-color: var(--bd);
     border-radius: 50%;
     animation: spn .8s linear infinite
@@ -2985,15 +2985,15 @@ h2 {
 }
 
 .btn.p {
-    background: linear-gradient(135deg, #b8662f, #985327 60%, #7d4220);
+    background: linear-gradient(135deg, #2E9C63, #1E7A4A 60%, #145a36);
     border-color: #ffffff22;
-    box-shadow: inset 0 1px 0 #ffffff33, 0 10px 24px -8px #985327aa
+    box-shadow: inset 0 1px 0 #ffffff33, 0 10px 24px -8px #1E7A4Aaa
 }
 
 .btn.p:hover {
-    background: linear-gradient(135deg, #c4713a, #985327);
+    background: linear-gradient(135deg, #38b274, #1E7A4A);
     border-color: #ffffff33;
-    box-shadow: inset 0 1px 0 #ffffff44, 0 18px 36px -10px #985327dd;
+    box-shadow: inset 0 1px 0 #ffffff44, 0 18px 36px -10px #1E7A4Add;
     transform: translateY(-2px)
 }
 
@@ -3007,7 +3007,7 @@ h2 {
 }
 
 .btn.wa svg:not([style]) {
-    background: #2A1D1A14
+    background: #0F2A2014
 }
 
 .btn:hover svg:not([style]) {
@@ -3140,11 +3140,11 @@ h2 {
 }
 
 .pil:nth-child(1) {
-    background: linear-gradient(155deg, #985327, #861300 160%)
+    background: linear-gradient(155deg, #2E9C63, #145a36 140%)
 }
 
 .pil:nth-child(2) {
-    background: linear-gradient(160deg, #13287E -30%, #2A1D1A 75%)
+    background: linear-gradient(160deg, #13287E -30%, #0F2A20 75%)
 }
 
 .pil svg.i {
@@ -3182,7 +3182,7 @@ h2 {
 }
 
 .mq i:nth-of-type(4n+1) {
-    color: #c8743a
+    color: #3fbf7a
 }
 
 .mq i:nth-of-type(4n+2) {
@@ -3243,11 +3243,11 @@ h2 {
 }
 
 .bar .f {
-    box-shadow: 0 0 14px #98532766
+    box-shadow: 0 0 14px #1E7A4A66
 }
 
 .bar:nth-child(1) .f {
-    background: linear-gradient(90deg, var(--br), #c8743a)
+    background: linear-gradient(90deg, var(--br), #3fbf7a)
 }
 
 .bar:nth-child(2) .f {
@@ -3277,7 +3277,7 @@ h2 {
 }
 
 .dif li:nth-child(5n) svg {
-    color: #c8743a
+    color: #3fbf7a
 }
 
 /* formulário: espaçamento */
@@ -3723,7 +3723,7 @@ h2 {
 }
 
 .photo {
-    box-shadow: 0 40px 80px #98532744
+    box-shadow: 0 40px 80px #1E7A4A44
 }
 
 .tl li:nth-child(4n+1) {
@@ -3780,148 +3780,6 @@ h2 {
     }
 }
 
-/* pop-up do WhatsApp */
-button.fw {
-    border: 0;
-    padding: 0;
-    cursor: pointer
-}
-
-.fw .i-x {
-    display: none;
-    width: 24px;
-    height: 24px
-}
-
-.fw[aria-expanded=true] .i-wa {
-    display: none
-}
-
-.fw[aria-expanded=true] .i-x {
-    display: block
-}
-
-.wap {
-    position: fixed;
-    right: 1.2rem;
-    bottom: calc(5.8rem + env(safe-area-inset-bottom, 0px));
-    width: min(350px, calc(100vw - 2.4rem));
-    z-index: 41;
-    border-radius: 24px;
-    background: #fff;
-    color: var(--bk);
-    box-shadow: 0 30px 70px #00000040, 0 0 0 1px #0000000f;
-    overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(14px) scale(.96);
-    transform-origin: bottom right;
-    transition: opacity .35s, transform .35s cubic-bezier(.2, .8, .2, 1), visibility .35s
-}
-
-.wap.show {
-    opacity: 1;
-    visibility: visible;
-    transform: none
-}
-
-.wap-h {
-    display: flex;
-    align-items: center;
-    gap: .8rem;
-    padding: 1.1rem 1.2rem;
-    background: linear-gradient(135deg, var(--bd), #4a2a1a);
-    color: #fff
-}
-
-.wap-av {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--br);
-    display: grid;
-    place-items: center;
-    flex: none
-}
-
-.wap-av svg {
-    width: 20px;
-    height: 20px;
-    color: var(--bg)
-}
-
-.wap-h b {
-    display: block;
-    font-size: .98rem;
-    line-height: 1.2
-}
-
-.wap-h small {
-    opacity: .75;
-    font-size: .78rem
-}
-
-.wap-x {
-    margin-left: auto;
-    background: none;
-    border: 0;
-    color: #fff;
-    width: 34px;
-    height: 34px;
-    cursor: pointer;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    flex: none
-}
-
-.wap-x:hover {
-    background: #ffffff1f
-}
-
-.wap-x svg {
-    width: 18px;
-    height: 18px
-}
-
-.wap-b {
-    padding: 1.2rem;
-    background: #ece5dd
-}
-
-.wap-b p {
-    background: #fff;
-    border-radius: 4px 18px 18px 18px;
-    padding: .85rem 1rem;
-    font-size: .93rem;
-    line-height: 1.5;
-    box-shadow: 0 1px 2px #0000001a;
-    margin: 0 0 1rem;
-    max-width: 92%
-}
-
-.wap-b .btn {
-    width: 100%;
-    justify-content: center;
-    min-height: 48px;
-    background: #25D366;
-    border-color: #25D366;
-    color: #073b1d;
-    font-weight: 600
-}
-
-.wap-b .btn:hover {
-    background: #1fbd5b;
-    border-color: #1fbd5b
-}
-
-@media(max-width:760px) {
-    .wap {
-        right: .8rem;
-        bottom: calc(5.2rem + env(safe-area-inset-bottom, 0px))
-    }
-}
-
 /* ===== hero dividido (painel + colagem) ===== */
 #hero {
     display: grid;
@@ -3936,7 +3794,7 @@ button.fw {
 .hl {
     position: relative;
     z-index: 1;
-    background: linear-gradient(160deg, #3a2316, var(--bd) 60%, #1a1210);
+    background: linear-gradient(160deg, #0f3828, var(--bd) 60%, #07130d);
     color: #fff;
     display: flex;
     align-items: center;
@@ -4018,7 +3876,7 @@ button.fw {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, #2A1D1A88, transparent 40%), linear-gradient(#0000 60%, #0006);
+    background: linear-gradient(90deg, #0F2A2088, transparent 40%), linear-gradient(#0000 60%, #0006);
     pointer-events: none
 }
 
@@ -4251,4 +4109,374 @@ button.fw {
     .hl .hstats>div>span {
         font-size: .7rem
     }
+}
+
+/* ===== hero fiel à referência: painel na cor da marca, arco sobreposto ===== */
+.hl {
+    background: linear-gradient(160deg, #2E9C63, #1E7A4A 45%, #0f4a30);
+    padding-right: clamp(2rem, 9vw, 9rem)
+}
+
+.hl::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--tex) center/cover;
+    mix-blend-mode: multiply;
+    opacity: .4;
+    pointer-events: none
+}
+
+#hero h1 {
+    font-size: clamp(2.2rem, 3.9vw, 3.9rem)
+}
+
+.hl .btn.p {
+    background: #fff;
+    color: var(--bd);
+    border-color: #fff;
+    box-shadow: 0 12px 30px -10px #0006
+}
+
+.hl .btn.p:hover {
+    background: var(--bd);
+    color: #fff;
+    border-color: var(--bd)
+}
+
+.hl .btn.p svg:not([style]) {
+    background: #0F2A2014
+}
+
+.hl .btn.p:hover svg:not([style]) {
+    background: #ffffff26
+}
+
+.hrail {
+    background: var(--bd)
+}
+
+.hsmall .hplay {
+    background: var(--br)
+}
+
+.harch {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: clamp(220px, 22vw, 360px);
+    aspect-ratio: 3/4;
+    transform: translate(-30%, -50%);
+    z-index: 3;
+    animation: arf 9s ease-in-out infinite;
+    pointer-events: none
+}
+
+@keyframes arf {
+    50% {
+        transform: translate(-30%, -52%)
+    }
+}
+
+.harch>span {
+    position: absolute;
+    inset: 0;
+    border-radius: 999px 999px 24px 24px;
+    background-size: cover;
+    background-position: center;
+    border: 6px solid var(--bd);
+    box-shadow: 0 40px 80px #0009
+}
+
+.harch .hstar {
+    position: absolute;
+    left: auto;
+    top: -3%;
+    right: -12%;
+    width: 34%;
+    transform: none;
+    animation: spin 40s linear infinite
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@media(max-width:960px) {
+    .hl {
+        text-align: center;
+        padding: 6.5rem 1.5rem 5rem
+    }
+
+    #hero h1,
+    #hero .lead {
+        text-align: center;
+        margin-inline: auto
+    }
+
+    #hero .ctas,
+    .hl .hstats {
+        justify-content: center
+    }
+
+    .hl .hstats>div {
+        text-align: center
+    }
+
+    .hl .hstats>div>span {
+        margin-inline: auto
+    }
+
+    .hsmall {
+        display: none
+    }
+
+    .harch {
+        left: auto;
+        right: 1.5rem;
+        top: auto;
+        bottom: -3rem;
+        width: 40%;
+        transform: none;
+        animation: none
+    }
+
+    .harch .hstar {
+        right: -14%;
+        top: -6%;
+        width: 36%
+    }
+
+    .hr {
+        margin-bottom: 3.2rem
+    }
+}
+
+/* ===== animal em PNG sobreposto (arara) ===== */
+.hl {
+    padding-right: clamp(2rem, 10vw, 10rem)
+}
+
+.hbird {
+    position: absolute;
+    left: 3vw;
+    top: 40%;
+    width: clamp(300px, 31vw, 540px);
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    pointer-events: none;
+    filter: drop-shadow(0 30px 40px #0007);
+    animation: bird 7s ease-in-out infinite
+}
+
+@keyframes bird {
+    50% {
+        transform: translate(-50%, -53%) rotate(2deg)
+    }
+}
+
+@keyframes bird2 {
+    50% {
+        transform: translate(-50%, -53%) rotate(2deg)
+    }
+}
+
+@media(max-width:960px) {
+    .hl {
+        padding-bottom: 12.5rem
+    }
+
+    .hbird {
+        left: 50%;
+        top: 0;
+        width: min(78vw, 380px);
+        transform: translate(-50%, -52%);
+        animation: bird2 7s ease-in-out infinite
+    }
+
+    .hr {
+        margin-bottom: 0
+    }
+}
+
+/* hero sem fotos: painel escuro com grafismos */
+.hr {
+    display: block
+}
+
+.hbig {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: auto;
+    background: radial-gradient(60% 60% at 75% 25%, #13287E66, transparent 70%), radial-gradient(55% 55% at 25% 85%, #8B800044, transparent 70%), linear-gradient(200deg, #0F2A20, #111)
+}
+
+.hbig::after {
+    display: none
+}
+
+.hart svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%
+}
+
+@media(max-width:960px) {
+    .hr {
+        height: 260px
+    }
+}
+
+/* arara maior e painel direito limpo */
+.hbig {
+    background: linear-gradient(200deg, #0F2A20, #111)
+}
+
+.hbird {
+    left: 8vw;
+    top: 40%;
+    width: clamp(380px, 42vw, 780px)
+}
+
+@media(max-width:960px) {
+    .hl {
+        padding-bottom: 15rem
+    }
+
+    .hr {
+        height: 11rem
+    }
+
+    .hbig {
+        background: var(--bd)
+    }
+
+    .hbird {
+        left: 50%;
+        top: 0;
+        width: min(94vw, 480px)
+    }
+}
+
+/* página mais enxuta */
+section {
+    padding: clamp(4rem, 9vw, 7rem) 0
+}
+
+.diff {
+    margin-top: 2.5rem
+}
+
+/* ritmo intermediário entre as seções */
+section {
+    padding: clamp(4.5rem, 10vw, 8.5rem) 0
+}
+
+/* ===== paleta verde e organização do layout ===== */
+:root {
+    --off: #f1f5f2
+}
+
+::selection {
+    background: var(--br);
+    color: #fff
+}
+
+/* cabeçalho de seção em duas colunas */
+:is(#video, #desafios, #solucao, #evidencias, #servicos, #processo, #inst)>.w {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+    column-gap: clamp(2rem, 6vw, 6rem);
+    align-items: end
+}
+
+:is(#video, #desafios, #solucao, #evidencias, #servicos, #processo, #inst)>.w>* {
+    grid-column: 1/-1
+}
+
+:is(#video, #desafios, #solucao, #evidencias, #servicos, #processo, #inst)>.w>h2 {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+    text-align: left;
+    max-width: none !important
+}
+
+:is(#video, #desafios, #solucao, #evidencias, #servicos, #processo, #inst)>.w>.lead {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0 0 .4rem;
+    text-align: left
+}
+
+:is(#video, #desafios, #solucao, #evidencias, #servicos, #processo, #inst)>.w>:not(h2):not(.lead) {
+    margin-top: clamp(2.5rem, 5vw, 4rem)
+}
+
+#video {
+    text-align: left
+}
+
+.player {
+    max-width: none
+}
+
+.dg,
+.pg,
+.og,
+.ps,
+.pq {
+    gap: 1.5rem
+}
+
+@media(max-width:900px) {
+    :is(#video, #desafios, #solucao, #evidencias, #servicos, #processo, #inst)>.w {
+        display: block
+    }
+
+    :is(#video, #desafios, #solucao, #evidencias, #servicos, #processo, #inst)>.w>.lead {
+        margin-top: 1.1rem
+    }
+}
+
+/* ritmo de fundos: escuro, claro, cinza, claro, escuro... */
+#video,
+#evidencias,
+#contato {
+    background: radial-gradient(70% 60% at 85% 0%, #1E7A4A33, transparent 70%), var(--bd);
+    color: #fff
+}
+
+#desafios,
+#solucao,
+#processo,
+#faq {
+    background: #fff !important
+}
+
+#historia,
+#servicos,
+#inst {
+    background: var(--off)
+}
+
+#servicos .of {
+    background: #fff;
+    box-shadow: 0 1px 0 #0000000a
+}
+
+#servicos .of:hover {
+    background: #fff
+}
+
+#processo .st {
+    background: var(--off)
+}
+
+.pil:nth-child(3) {
+    background: var(--off)
 }
