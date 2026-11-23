@@ -31,6 +31,7 @@
 </head>
 
 <body>
+    <a class="skip" href="#main">Pular para o conteúdo</a>
     <div class="qz" id="qz" role="dialog" aria-modal="true" aria-labelledby="qt">
         <div class="qz-top"><img class="lg" src="img/LOGO - MAIRI (white).png" alt="MAIRI" width="150"
                 height="32"><button type="button" class="qz-skip" id="qskip">Pular</button></div>
@@ -108,7 +109,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main" tabindex="-1">
         <!-- 01 HEADLINE -->
         <section id="hero" aria-labelledby="t1">
             <div class="hl"
@@ -133,7 +134,7 @@
             </div>
             <div class="hr">
                 <div class="hbig" aria-hidden="true"></div>
-                <img class="hbird" src="img/garça.png" alt="" width="1200" height="1155"
+                <img class="hbird" src="img/arara.png" alt="" width="1200" height="1155"
                     onerror="this.style.display='none'">
             </div>
             <div class="hrail">
@@ -513,6 +514,42 @@
             <use href="#wa" />
         </svg></a>
 
+    <button type="button" class="ac-btn" id="acBtn" aria-label="Abrir menu de acessibilidade" aria-expanded="false"
+        aria-controls="acPanel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="4.5" r="1.8" />
+            <path d="M5 8.5l7 1.5 7-1.5M12 10v4m-3.500 7l3.500-7 3.500 7" />
+        </svg></button>
+    <div class="ac-panel" id="acPanel" role="dialog" aria-label="Menu de acessibilidade" hidden>
+        <div class="ac-h"><b>Acessibilidade</b><button type="button" class="ac-x" id="acX"
+                aria-label="Fechar">×</button></div>
+        <div class="ac-size"><span>Tamanho do texto</span>
+            <div><button type="button" id="acMinus" aria-label="Diminuir texto">A−</button><output id="acLvl"
+                    aria-live="polite">100%</output><button type="button" id="acPlus"
+                    aria-label="Aumentar texto">A+</button></div>
+        </div>
+        <div class="ac-grid">
+            <button type="button" class="ac-opt" data-ac="hc" aria-pressed="false">Alto contraste</button>
+            <button type="button" class="ac-opt" data-ac="ul" aria-pressed="false">Sublinhar links</button>
+            <button type="button" class="ac-opt" data-ac="font" aria-pressed="false">Fonte legível</button>
+            <button type="button" class="ac-opt" data-ac="space" aria-pressed="false">Mais espaçamento</button>
+            <button type="button" class="ac-opt" data-ac="still" aria-pressed="false">Pausar animações</button>
+            <button type="button" class="ac-opt" data-ac="cursor" aria-pressed="false">Cursor grande</button>
+            <button type="button" class="ac-opt" data-ac="focus" aria-pressed="false">Destacar foco</button>
+            <button type="button" class="ac-opt" id="acTts" aria-pressed="false">Ouvir a página</button>
+        </div>
+        <button type="button" class="ac-reset" id="acReset">Restaurar padrão</button>
+        <p class="ac-note" id="acSt" role="status" aria-live="polite">Tradutor de Libras: use o botão azul VLibras na
+            lateral da tela.</p>
+    </div>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js" defer></script>
+    <script>window.addEventListener("load", function () { try { new window.VLibras.Widget("https://vlibras.gov.br/app") } catch (e) { } })</script>
     <script src="js/main.js" defer></script>
 </body>
 
