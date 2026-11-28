@@ -31,7 +31,6 @@
     $$("nav a").forEach(a => a.onclick = () => tog(false));
     addEventListener("keydown", e => { if (e.key === "Escape") tog(false) });
     // vídeo placeholder
-    $("#play").onclick = () => $("#msg").classList.add("on"); $("#cl").onclick = () => $("#msg").classList.remove("on");
     // reveal + contadores + barras
     const count = el => { const to = +el.dataset.c; if (reduce) { el.textContent = to; return } const t0 = performance.now(); const f = n => { const p = Math.min((n - t0) / 1400, 1); el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(f) }; requestAnimationFrame(f) };
     const io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; const t = e.target; t.classList.add("in"); $$("[data-c]", t).forEach(count); if (t.matches("[data-c]")) count(t); $$("[data-w]", t).forEach(b => b.style.width = b.dataset.w + "%"); io.unobserve(t) }), { threshold: .15, rootMargin: "0px 0px -6% 0px" });
@@ -62,8 +61,8 @@
     const buildMsg = d => `Olá! Sou ${d.nome}, do empreendimento ${d.empreendimento}` + (d.tipo ? ` (${d.tipo})` : "") + (d.regiao ? `, de ${d.regiao}` : "") + ".\n" + (d.servicos.length ? `Tenho interesse em: ${d.servicos.join(", ")}.\n` : "") + (d.mensagem ? d.mensagem + "\n" : "") + `Contato: ${d.contato}`;
     const waUrl = d => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildMsg(d))}`;
     function showOk(d, note) {
-        $("#ok-t").textContent = `Obrigado, ${d.nome.split(" ")[0]}.`;
-        $("#ok-p").textContent = `Recebemos as informações sobre ${d.empreendimento}. A Mairi entrará em contato pelo canal que você informou.`;
+        $("#ok-t").textContent = note ? "Simulação concluída." : `Obrigado, ${d.nome.split(" ")[0]}.`;
+        $("#ok-p").textContent = note ? `Os dados sobre ${d.empreendimento} não foram enviados nem armazenados. Esta é apenas uma demonstração do funcionamento do formulário.` : `Recebemos as informações sobre ${d.empreendimento}. A Mairi entrará em contato pelo canal que você informou.`;
         const rows = [["Empreendimento", d.empreendimento], ["Tipo", d.tipo], ["Região", d.regiao], ["Interesse", d.servicos.join(", ")], ["Contato", d.contato]].filter(r => r[1]);
         $("#ok-l").innerHTML = rows.map(r => `<li><b>${r[0]}</b>${esc(r[1])}</li>`).join("");
         $("#ok-n").textContent = note || ""; $("#ok-n").hidden = !note; $("#ok-wa").href = waUrl(d);
@@ -72,17 +71,12 @@
     $("#ok-again").onclick = () => { fmEl.reset(); $$("[aria-invalid]", fmEl).forEach(i => setErr(i.id, "")); fOk.hidden = true; fBody.hidden = false; $("#f1").focus() };
     fmEl.addEventListener("submit", async e => {
         e.preventDefault(); const d = collect(); if (d.site || !validate(d)) return;
-        const bl = $(".bl", fSub); fSub.disabled = true; fSub.classList.add("busy"); bl.textContent = "Enviando"; fStat.textContent = "Enviando sua mensagem...";
-        const done = () => { fSub.disabled = false; fSub.classList.remove("busy"); bl.textContent = "Enviar mensagem"; fStat.textContent = "" };
-        if (SIMULATE_SEND) { await new Promise(r => setTimeout(r, reduce ? 400 : 1900)); done(); showOk(d, "Modo demonstração: nenhum dado foi enviado."); return }
+        const bl = $(".bl", fSub); fSub.disabled = true; fSub.classList.add("busy"); fmEl.classList.add("sending"); bl.textContent = "Enviando"; fStat.textContent = "Enviando sua mensagem...";
+        const done = () => { fSub.disabled = false; fSub.classList.remove("busy"); fmEl.classList.remove("sending"); bl.textContent = "Enviar mensagem"; fStat.textContent = "" };
+        if (SIMULATE_SEND) { await new Promise(r => setTimeout(r, reduce ? 400 : 1900)); done(); showOk(d, "Simulação de envio: nenhum dado foi enviado ou armazenado."); return }
         if (FORM_ENDPOINT) { try { const r = await fetch(FORM_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(d) }); if (!r.ok) throw 0; done(); showOk(d); return } catch (_) { done(); window.open(waUrl(d), "_blank", "noopener"); showOk(d); return } }
         done(); window.open(waUrl(d), "_blank", "noopener"); showOk(d);
     });
-    // refinamentos de interação (mouse)
-    if (matchMedia("(pointer:fine)").matches && !reduce) {
-        $$(".card,.pil,.of,.pc,.st").forEach(c => c.addEventListener("pointermove", e => { const r = c.getBoundingClientRect(); c.style.setProperty("--mx", e.clientX - r.left + "px"); c.style.setProperty("--my", e.clientY - r.top + "px") }));
-        $$(".btn.p,.btn.wa").forEach(b => { b.addEventListener("pointermove", e => { const r = b.getBoundingClientRect(); b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .1}px,${(e.clientY - r.top - r.height / 2) * .18 - 2}px)` }); b.addEventListener("pointerleave", () => b.style.transform = "") });
-    }
 
 
     // quiz de entrada
@@ -106,10 +100,10 @@
         const h = $("#qt"); h.tabIndex = -1; h.focus({ preventScroll: true }); qz.scrollTo(0, 0);
     }
     function finish(use) {
+        const bu = $("#burst"); bu.classList.add("go"); setTimeout(() => bu.classList.remove("go"), 1800);
         const p = use ? result() : [];
         p.forEach(i => { const c = $$("#dg .card")[i]; if (c) c.classList.add("hit") });
         if (p.length) $("#f6").value = "Respondi o quiz do site. Meus principais desafios: " + p.slice(0, 3).map(i => desafios[i][0].toLowerCase()).join("; ") + ".";
-        try { sessionStorage.setItem("mairiQuiz", "1") } catch (_) { }
         qz.classList.add("out");
         setTimeout(() => { root.classList.remove("qz-lock"); inertEls.forEach(e => e.inert = false); scrollTo(0, 0); startRv() }, reduce ? 0 : 650);
     }
@@ -123,16 +117,13 @@
     $("#qskip").onclick = () => finish(false);
     if (root.classList.contains("qz-lock")) { inertEls.forEach(e => e.inert = true); render() } else startRv();
 
-    // barra de progresso de leitura
-    const pg = $("#pgbar");
-    const upd = () => { const m = document.documentElement.scrollHeight - innerHeight; pg.style.transform = `scaleX(${m > 0 ? Math.min(scrollY / m, 1) : 0})` };
-    addEventListener("scroll", upd, { passive: true }); upd();
 
     // esconde o botão flutuante do WhatsApp na seção de contato
     const fw = $("#fw");
     new IntersectionObserver(es => es.forEach(e => fw.classList.toggle("off", e.isIntersecting)), { threshold: .15 }).observe($("#contato"));
 
-    $$("[data-social]").forEach(a => a.href = SOCIAL[a.dataset.social] || "#");
+    $$("[data-social]").forEach(a => { a.href = SOCIAL[a.dataset.social] || "#"; a.title = "Link demonstrativo: perfil oficial ainda não configurado" });
+    if (!WHATSAPP_NUMBER) $$("[data-wa]").forEach(a => a.title = "Link demonstrativo: número de WhatsApp ainda não configurado");
 
     // paralaxe suave da ave (mouse)
     if (bird && matchMedia("(pointer:fine)").matches && !reduce) {
@@ -174,4 +165,19 @@
     };
     $("#acReset").onclick = () => { AC = { ...AC0 }; stopTts(); acApply(); acSt.textContent = "Configurações restauradas." };
     acApply();
+
+    // exemplos de entregas (abas)
+    const exT = $$(".ex-tab"), exP = $$(".ex-panel");
+    const exSel = i => exT.forEach((t, k) => { t.classList.toggle("on", k === i); t.setAttribute("aria-selected", String(k === i)); t.tabIndex = k === i ? 0 : -1; exP[k].classList.toggle("on", k === i) });
+    exT.forEach((t, i) => { t.onclick = () => exSel(i); t.onkeydown = e => { let n = null; if (e.key === "ArrowRight" || e.key === "ArrowDown") n = (i + 1) % exT.length; if (e.key === "ArrowLeft" || e.key === "ArrowUp") n = (i + exT.length - 1) % exT.length; if (n !== null) { e.preventDefault(); exSel(n); exT[n].focus() } } });
+
+    // carrossel de arrastar (celular)
+    const exTrack = $(".ex-track"), exDots = $$(".ex-dots button");
+    let exRaf;
+    exTrack.addEventListener("scroll", () => {
+        if (getComputedStyle(exTrack).overflowX === "visible") return;
+        cancelAnimationFrame(exRaf);
+        exRaf = requestAnimationFrame(() => { const step = (exP[1].offsetLeft - exP[0].offsetLeft) || 1, i = Math.max(0, Math.min(exP.length - 1, Math.round(exTrack.scrollLeft / step))); exSel(i); exDots.forEach((d, k) => { d.classList.toggle("on", k === i); k === i ? d.setAttribute("aria-current", "true") : d.removeAttribute("aria-current") }) });
+    }, { passive: true });
+    exDots.forEach((d, i) => d.onclick = () => { const step = exP[1].offsetLeft - exP[0].offsetLeft; exTrack.scrollTo({ left: i * step, behavior: reduce ? "auto" : "smooth" }) });
 })();

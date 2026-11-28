@@ -10,13 +10,13 @@
     <meta property="og:title" content="MAIRI | Consultoria em Marketing">
     <meta property="og:description" content="Conectamos histórias, territórios e negócios a novas oportunidades.">
     <meta property="og:type" content="website">
-    <meta name="theme-color" content="#0F2A20">
+    <meta name="theme-color" content="#2A1D1A">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script>try { if (!sessionStorage.getItem("mairiQuiz")) document.documentElement.classList.add("qz-lock") } catch (e) { document.documentElement.classList.add("qz-lock") }</script>
+    <script>if (location.search.indexOf("semquiz") < 0) document.documentElement.classList.add("qz-lock")</script>
     <noscript>
         <style>
             .qz {
@@ -32,6 +32,8 @@
 
 <body>
     <a class="skip" href="#main">Pular para o conteúdo</a>
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="burst" id="burst" aria-hidden="true"></div>
     <div class="qz" id="qz" role="dialog" aria-modal="true" aria-labelledby="qt">
         <div class="qz-top"><img class="lg" src="img/LOGO - MAIRI (white).png" alt="MAIRI" width="150"
                 height="32"><button type="button" class="qz-skip" id="qskip">Pular</button></div>
@@ -70,7 +72,6 @@
         </symbol>
     </svg>
 
-    <div class="pgbar" id="pgbar" aria-hidden="true"></div>
     <header id="hd">
         <div class="w nav">
             <a href="#hero" class="logo" aria-label="MAIRI, início"><img class="lg" src="img/LOGO - MAIRI (white).png"
@@ -80,11 +81,11 @@
             <nav id="nv" aria-label="Principal">
                 <ul>
                     <li><a href="#desafios">Desafios</a></li>
-                    <li><a href="#historia">História</a></li>
                     <li><a href="#solucao">Soluções</a></li>
-                    <li><a href="#evidencias">Evidências</a></li>
                     <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#processo">Processo</a></li>
+                    <li><a href="#entregas">Entregas</a></li>
+                    <li><a href="#evidencias">Evidências</a></li>
+                    <li><a href="#historia">História</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
@@ -125,16 +126,12 @@
                             <svg>
                                 <use href="#arrow" />
                             </svg></a><a class="btn s" href="#contato" data-wa>Fale com a Mairi</a></div>
-                    <div class="hstats rv" style="--d:.8s">
-                        <div><b><span data-c="21">21</span></b><span>empreendimentos mapeados em 2025</span></div>
-                        <div><b><span data-c="57">57</span>%</b><span>são associações</span></div>
-                        <div><b><span data-c="17">17</span></b><span>vendem só no mercado local</span></div>
-                    </div>
+
                 </div>
             </div>
             <div class="hr">
                 <div class="hbig" aria-hidden="true"></div>
-                <img class="hbird" src="img/garça.png" alt="" width="1200" height="1155"
+                <img class="hbird" src="img/arara.png" alt="" width="1200" height="1155"
                     onerror="this.style.display='none'">
             </div>
             <div class="hrail">
@@ -149,29 +146,7 @@
                             <use href="#li" />
                         </svg></a><a data-wa href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg>
                             <use href="#wa" />
-                        </svg></a></div><a class="hscroll" href="#video">Role</a>
-            </div>
-        </section>
-
-        <!-- 02 VSL -->
-        <section id="video" aria-labelledby="t2">
-            <div class="w">
-                <h2 id="t2" class="rv">Mais do que marketing. Conexões que transformam oportunidades.</h2>
-                <p class="lead rv">Veja como a Mairi une estratégia de mercado, respeito aos saberes tradicionais e
-                    valorização da identidade de cada território.</p>
-                <div class="player rv">
-                    <div class="pl">Vídeo institucional da Mairi</div><button class="play" id="play"
-                        aria-label="Reproduzir vídeo institucional"><svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M6 4l14 8-14 8z" />
-                        </svg></button>
-                    <div class="msg" id="msg" role="status">
-                        <div>
-                            <p>O vídeo institucional será publicado em breve.<br><small>Espaço reservado: adicione o
-                                    arquivo em /assets/videos.</small></p><button class="btn s" id="cl"
-                                style="border-color:#fff">Fechar</button>
-                        </div>
-                    </div>
-                </div>
+                        </svg></a></div><a class="hscroll" href="#desafios">Role</a>
             </div>
         </section>
 
@@ -187,39 +162,9 @@
                     <div>
                         <p><strong>17 dos 21 empreendimentos mapeados</strong> comercializam seus produtos apenas no
                             mercado local. A produção existe. O que falta é o caminho até o mercado.</p>
-                        <p style="margin-top:.8rem;font-size:.85rem;opacity:.6">Diagnóstico mercadológico da Mairi,
-                            2025.</p>
+                        <p style="margin-top:.8rem;font-size:.85rem;opacity:.6">Fonte: diagnóstico mercadológico da
+                            Mairi (ver Evidências), 2025.</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 04 HISTÓRIA -->
-        <section id="historia" aria-labelledby="t4">
-            <div class="w hs">
-                <div class="photo rv"><svg viewBox="0 0 300 400" preserveAspectRatio="none">
-                        <g fill="none" stroke="#fff" stroke-opacity=".35">
-                            <path d="M-10 300C60 260 110 340 170 300S260 260 310 300" />
-                            <path d="M-10 330C60 290 110 370 170 330S260 290 310 330" />
-                            <path d="M-10 360C60 320 110 400 170 360S260 320 310 360" />
-                        </g>
-                        <use href="#spica" x="125" y="90" width="50" height="50" style="color:#fff" />
-                    </svg></div>
-                <div>
-                    <h2 id="t4" class="rv">Uma história que nasce das raízes amazônicas.</h2>
-                    <p class="rv">Mairi é uma palavra de origem nas tradições Tupinambás, ligada à região de Belém e à
-                        transmissão de conhecimentos entre povos e gerações. É desse território, e da força de quem vive
-                        nele, que nasce a nossa atuação.</p>
-                    <ul class="tl">
-                        <li class="rv"><b>Origem do nome.</b> Uma palavra de origem nas tradições Tupinambás, que remete
-                            às trocas culturais entre povos e gerações.</li>
-                        <li class="rv"><b>Povos tradicionais.</b> Atuação voltada a empreendimentos dos Povos
-                            Tradicionais das Amazônias.</li>
-                        <li class="rv"><b>Conhecimentos locais.</b> Saberes tradicionais tratados como ativo de marca,
-                            não como detalhe.</li>
-                        <li class="rv"><b>Transformação social.</b> Marketing como ferramenta de autonomia e acesso a
-                            mercados justos.</li>
-                    </ul>
                 </div>
             </div>
         </section>
@@ -264,43 +209,6 @@
             </div>
         </section>
 
-        <!-- 06 EVIDÊNCIAS -->
-        <section id="evidencias" class="dark" aria-labelledby="t6">
-            <div class="w">
-                <h2 id="t6" class="rv" style="max-width:16ch">Estratégia construída a partir da realidade amazônica.
-                </h2>
-                <div class="ev">
-                    <div class="rv">
-                        <div class="kpi"><span data-c="21">0</span></div>
-                        <p class="lead">empreendimentos comunitários mapeados em 2025 na investigação mercadológica da
-                            Mairi.</p>
-                    </div>
-                    <div id="bars" class="rv">
-                        <div class="bar">
-                            <div class="t"><span>Associações</span><b><span data-c="57">0</span>%</b></div>
-                            <div class="tr">
-                                <div class="f" data-w="57"></div>
-                            </div>
-                        </div>
-                        <div class="bar">
-                            <div class="t"><span>Cooperativas</span><b><span data-c="31">0</span>%</b></div>
-                            <div class="tr">
-                                <div class="f" data-w="31"></div>
-                            </div>
-                        </div>
-                        <div class="bar">
-                            <div class="t"><span>Empresas privadas</span><b><span data-c="12">0</span>%</b></div>
-                            <div class="tr">
-                                <div class="f" data-w="12"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <ul class="dif" id="dif"></ul>
-                <p class="note rv">Fonte: investigação mercadológica da Mairi, 2025.</p>
-            </div>
-        </section>
-
         <!-- 07 OFERTA -->
         <section id="servicos" aria-labelledby="t7">
             <div class="w">
@@ -336,6 +244,119 @@
             </div>
         </section>
 
+        <!-- ENTREGAS -->
+        <section id="entregas" aria-labelledby="te">
+            <div class="w">
+                <h2 id="te" class="rv">Exemplos de entregas.</h2>
+                <p class="lead rv">Modelos ilustrativos do que a Mairi desenvolve em cada serviço. Foram criados para
+                    este projeto e não representam clientes reais.</p>
+                <div class="ex2 rv">
+                    <div class="ex-tabs" role="tablist" aria-label="Exemplos de entregas"><button type="button"
+                            role="tab" class="ex-tab on" id="tab1" aria-selected="true" aria-controls="pn1"><span
+                                class="n">01</span><span class="t"><b>Plano de marketing</b><small>Documento que
+                                    organiza diagnóstico, posicionamento, canais e metas.</small></span></button><button
+                            type="button" role="tab" class="ex-tab" id="tab2" aria-selected="false" aria-controls="pn2"
+                            tabindex="-1"><span class="n">02</span><span class="t"><b>Calendário de
+                                    conteúdo</b><small>Ideias de publicações que valorizam identidade, histórias e
+                                    saberes locais.</small></span></button><button type="button" role="tab"
+                            class="ex-tab" id="tab3" aria-selected="false" aria-controls="pn3" tabindex="-1"><span
+                                class="n">03</span><span class="t"><b>Jornada de pós-venda</b><small>Sequência de
+                                    contatos para fortalecer a relação com quem já comprou.</small></span></button>
+                    </div>
+                    <div class="ex-stage">
+                        <div class="ex-track" tabindex="0" role="region"
+                            aria-label="Exemplos de entregas. Deslize para o lado para ver mais">
+                            <div class="ex-panel on" role="tabpanel" id="pn1" aria-labelledby="tab1"
+                                style="--ac:var(--br)">
+                                <div class="win">
+                                    <div class="win-h"><i></i><i></i><i></i><span>plano-de-marketing</span></div>
+                                    <div class="win-b">
+                                        <h4>Plano de marketing</h4>
+                                        <ul class="ck-l">
+                                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                                                    aria-hidden="true">
+                                                    <path d="M5 12l5 5L20 7" />
+                                                </svg><span>Diagnóstico do empreendimento</span></li>
+                                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                                                    aria-hidden="true">
+                                                    <path d="M5 12l5 5L20 7" />
+                                                </svg><span>Público e posicionamento</span></li>
+                                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                                                    aria-hidden="true">
+                                                    <path d="M5 12l5 5L20 7" />
+                                                </svg><span>Canais de venda e divulgação</span></li>
+                                            <li class="todo"><em></em><span>Metas e cronograma</span></li>
+                                        </ul>
+                                        <div class="seg"><span style="--c:var(--br)">Mês 1</span><span
+                                                style="--c:var(--az)">Mês 2</span><span style="--c:var(--mm)">Mês
+                                                3</span></div>
+                                    </div>
+                                </div>
+                                <div class="ex-cap"><span class="n">01</span>
+                                    <h3>Plano de marketing</h3>
+                                    <p>Documento que organiza diagnóstico, posicionamento, canais e metas.</p>
+                                </div>
+                            </div>
+                            <div class="ex-panel" role="tabpanel" id="pn2" aria-labelledby="tab2"
+                                style="--ac:var(--az)">
+                                <div class="win">
+                                    <div class="win-h"><i></i><i></i><i></i><span>calendario-de-conteudo</span></div>
+                                    <div class="win-b">
+                                        <h4>Calendário de conteúdo</h4>
+                                        <div class="cal2"><span style="--c:var(--br)"><i>Seg</i>Nossa
+                                                história</span><span
+                                                style="--c:var(--az)"><i>Ter</i>Bastidores</span><span
+                                                style="--c:var(--mm)"><i>Qua</i>Saberes locais</span><span
+                                                style="--c:var(--vt)"><i>Qui</i>Produto</span><span
+                                                style="--c:var(--br)"><i>Sex</i>Origem</span><span
+                                                style="--c:var(--az)"><i>Sáb</i>Comunidade</span><span
+                                                style="--c:var(--mm)"><i>Dom</i>Dica de uso</span></div>
+                                    </div>
+                                </div>
+                                <div class="ex-cap"><span class="n">02</span>
+                                    <h3>Calendário de conteúdo</h3>
+                                    <p>Ideias de publicações que valorizam identidade, histórias e saberes locais.</p>
+                                </div>
+                            </div>
+                            <div class="ex-panel" role="tabpanel" id="pn3" aria-labelledby="tab3"
+                                style="--ac:var(--mm)">
+                                <div class="win">
+                                    <div class="win-h"><i></i><i></i><i></i><span>jornada-de-pos-venda</span></div>
+                                    <div class="win-b">
+                                        <h4>Jornada de pós-venda</h4>
+                                        <ol class="flow">
+                                            <li><b>1</b><span>Compra</span></li>
+                                            <li><b>2</b><span>Agradecimento</span></li>
+                                            <li><b>3</b><span>Acompanhamento</span></li>
+                                            <li><b>4</b><span>Convite para voltar</span></li>
+                                        </ol>
+                                        <p class="bub">Obrigado pela sua compra! Conte como foi a sua experiência com o
+                                            produto.</p>
+                                        <p class="bub me">Mensagem de exemplo</p>
+                                    </div>
+                                </div>
+                                <div class="ex-cap"><span class="n">03</span>
+                                    <h3>Jornada de pós-venda</h3>
+                                    <p>Sequência de contatos para fortalecer a relação com quem já comprou.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ex-dots"><button type="button" aria-label="Ver exemplo 1" class="on"
+                                aria-current="true"></button><button type="button"
+                                aria-label="Ver exemplo 2"></button><button type="button"
+                                aria-label="Ver exemplo 3"></button></div>
+                        <p class="ex-hint" aria-hidden="true">Arraste para o lado <svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M13 6l6 6-6 6" />
+                            </svg></p><span class="tag">Exemplo ilustrativo</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- PROCESSO -->
         <section id="processo" aria-labelledby="tr" style="background:var(--off)">
             <div class="w">
@@ -365,6 +386,115 @@
             </div>
         </section>
 
+        <!-- 06 EVIDÊNCIAS -->
+        <section id="evidencias" class="dark" aria-labelledby="t6">
+            <div class="w">
+                <h2 id="t6" class="rv" style="max-width:16ch">Estratégia construída a partir da realidade amazônica.
+                </h2>
+                <div class="ev">
+                    <div class="rv">
+                        <div class="kpi"><span data-c="21">0</span></div>
+                        <p class="lead">empreendimentos comunitários mapeados em 2025 na investigação mercadológica da
+                            Mairi.</p>
+                    </div>
+                    <div id="bars" class="rv">
+                        <div class="bar">
+                            <div class="t"><span>Associações (12 de 21)</span><b><span data-c="57">0</span>%</b></div>
+                            <div class="tr">
+                                <div class="f" data-w="57"></div>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div class="t"><span>Cooperativas (6 de 21)</span><b><span data-c="29">0</span>%</b></div>
+                            <div class="tr">
+                                <div class="f" data-w="29"></div>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div class="t"><span>Empresas privadas (3 de 21)</span><b><span data-c="14">0</span>%</b>
+                            </div>
+                            <div class="tr">
+                                <div class="f" data-w="14"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="dif" id="dif"></ul>
+                <p class="note rv">Fonte: pesquisa de mercado da Mairi, 21 empreendimentos mapeados em 2025. Percentuais
+                    calculados sobre os 21 empreendimentos. Referência completa: <span class="fill">[preencher título,
+                        autoria e data do documento original]</span>.</p>
+            </div>
+        </section>
+
+        <!-- 04 HISTÓRIA -->
+        <section id="historia" aria-labelledby="t4">
+            <div class="w hs">
+                <div class="photo rv"><svg viewBox="0 0 300 400" preserveAspectRatio="none">
+                        <g fill="none" stroke="#fff" stroke-opacity=".35">
+                            <path d="M-10 300C60 260 110 340 170 300S260 260 310 300" />
+                            <path d="M-10 330C60 290 110 370 170 330S260 290 310 330" />
+                            <path d="M-10 360C60 320 110 400 170 360S260 320 310 360" />
+                        </g>
+                        <use href="#spica" x="125" y="90" width="50" height="50" style="color:#fff" />
+                    </svg></div>
+                <div>
+                    <h2 id="t4" class="rv">Uma história que nasce das raízes amazônicas.</h2>
+                    <p class="rv">Mairi é uma palavra de origem nas tradições Tupinambás, ligada à região de Belém e à
+                        transmissão de conhecimentos entre povos e gerações. É desse território, e da força de quem vive
+                        nele, que nasce a nossa atuação.</p>
+                    <ul class="tl">
+                        <li class="rv"><b>Origem do nome.</b> Uma palavra de origem nas tradições Tupinambás, que remete
+                            às trocas culturais entre povos e gerações.</li>
+                        <li class="rv"><b>Povos tradicionais.</b> Atuação voltada a empreendimentos dos Povos
+                            Tradicionais das Amazônias.</li>
+                        <li class="rv"><b>Conhecimentos locais.</b> Saberes tradicionais tratados como ativo de marca,
+                            não como detalhe.</li>
+                        <li class="rv"><b>Transformação social.</b> Marketing como ferramenta de autonomia e acesso a
+                            mercados justos.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTITUCIONAL -->
+        <section id="inst" aria-labelledby="t10">
+            <div class="w">
+                <h2 id="t10" class="rv">Missão, visão e valores.</h2>
+                <div class="ig">
+                    <div class="rv">
+                        <h3>Missão</h3>
+                        <p>Oferecer consultoria de marketing aos empreendimentos dos Povos Tradicionais das Amazônias.
+                        </p>
+                    </div>
+                    <div class="rv" style="--d:.12s">
+                        <h3>Visão</h3>
+                        <p>Ser referência em consultoria de marketing e marketing digital para empreendimentos
+                            tradicionais na Amazônia.</p>
+                    </div>
+                    <div class="rv" style="--d:.24s">
+                        <h3>Valores</h3>
+                        <ul>
+                            <li>Ética e transparência</li>
+                            <li>Inovação</li>
+                            <li>Foco no cliente</li>
+                            <li>Sustentabilidade</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 09 Q&A -->
+        <section id="faq" aria-labelledby="t9">
+            <div class="w fq">
+                <div class="fh">
+                    <h2 id="t9" class="rv">Perguntas frequentes.</h2>
+                    <p class="rv">Não encontrou o que procurava? Fale diretamente com a equipe da Mairi.</p>
+                    <a class="btn p rv" href="#contato" data-wa="minhas dúvidas">Tirar dúvidas no WhatsApp</a>
+                </div>
+                <div class="faq" id="faqs"></div>
+            </div>
+        </section>
+
         <!-- 08 CONVERSÃO -->
         <section id="contato" aria-labelledby="t8">
             <div class="w cv">
@@ -382,6 +512,12 @@
                     <div id="fbody">
                         <h3 id="tf">Conte sobre seu empreendimento</h3>
                         <p class="fs">Leva menos de 2 minutos. Retornamos pelo canal que você informar.</p>
+                        <p class="sim" role="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M12 11v5M12 8h.01" />
+                            </svg><span><b>Formulário de simulação.</b> Este site é um projeto escolar: ao enviar,
+                                nenhum dado é transmitido ou armazenado.</span></p>
                         <div class="fi"><input id="f1" name="nome" placeholder=" " autocomplete="name"
                                 aria-describedby="e1"><label for="f1">Seu nome *</label><small class="er"
                                 id="e1"></small></div>
@@ -442,45 +578,6 @@
             </div>
         </section>
 
-        <!-- 09 Q&A -->
-        <section id="faq" aria-labelledby="t9">
-            <div class="w fq">
-                <div class="fh">
-                    <h2 id="t9" class="rv">Perguntas frequentes.</h2>
-                    <p class="rv">Não encontrou o que procurava? Fale diretamente com a equipe da Mairi.</p>
-                    <a class="btn p rv" href="#contato" data-wa="minhas dúvidas">Tirar dúvidas no WhatsApp</a>
-                </div>
-                <div class="faq" id="faqs"></div>
-            </div>
-        </section>
-
-        <!-- INSTITUCIONAL -->
-        <section id="inst" aria-labelledby="t10">
-            <div class="w">
-                <h2 id="t10" class="rv">Missão, visão e valores.</h2>
-                <div class="ig">
-                    <div class="rv">
-                        <h3>Missão</h3>
-                        <p>Oferecer consultoria de marketing aos empreendimentos dos Povos Tradicionais das Amazônias.
-                        </p>
-                    </div>
-                    <div class="rv" style="--d:.12s">
-                        <h3>Visão</h3>
-                        <p>Ser referência em consultoria de marketing e marketing digital para empreendimentos
-                            tradicionais na Amazônia.</p>
-                    </div>
-                    <div class="rv" style="--d:.24s">
-                        <h3>Valores</h3>
-                        <ul>
-                            <li>Ética e transparência</li>
-                            <li>Inovação</li>
-                            <li>Foco no cliente</li>
-                            <li>Sustentabilidade</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
@@ -507,6 +604,15 @@
                 <p>© <span id="yr"></span> Mairi Consultoria em Marketing</p>
                 <p>Amazônia, Brasil</p>
             </div>
+        </div>
+        <div class="w ft-proj">
+            <div><b>Sobre o projeto</b>
+                <p>Projeto escolar apresentado na feira. Escola: <span class="fill">[preencher]</span> · Turma: <span
+                        class="fill">[preencher]</span> · Professores orientadores: <span
+                        class="fill">[preencher]</span></p>
+            </div>
+            <p class="demo-note">Versão de demonstração: os links de redes sociais e de WhatsApp são ilustrativos até a
+                definição dos canais oficiais.</p>
         </div>
     </footer>
 
