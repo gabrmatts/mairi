@@ -14,9 +14,9 @@
     const dif = ["Especialização nas dimensões culturais e socioeconômicas locais", "Respeito aos saberes tradicionais", "Marketing ético", "Valorização identitária", "Conexão entre produção sustentável e mercados justos"];
     $("#dif").innerHTML = dif.map((t, i) => `<li class="rv" style="--d:${i * .08}s"><svg viewBox="0 0 24 24"><use href="#spica"/></svg>${t}</li>`).join("");
     const faq = [["O que é a Mairi Consultoria em Marketing?", "A Mairi é uma consultoria de marketing e marketing digital voltada a empreendimentos dos Povos Tradicionais das Amazônias, unindo estratégia de negócios e valorização de identidades locais."],
-    ["Para quem são os serviços da Mairi?", "Para empreendimentos tradicionais da Amazônia, como associações, cooperativas e empresas que desejam ampliar sua presença no mercado preservando sua identidade."],
+    ["Para quem são os serviços da Mairi?", "Para empreendimentos tradicionais de Belém, como associações, cooperativas e empresas que desejam ampliar sua presença no mercado preservando sua identidade."],
     ["Como funciona o planejamento de marketing?", "Começamos conhecendo o empreendimento e seus desafios. A partir disso, definimos estratégias, estruturamos canais e planejamos a inserção mercadológica."],
-    ["A Mairi atende empreendimentos de diferentes regiões da Amazônia?", "A Mairi atua com foco nos empreendimentos dos Povos Tradicionais das Amazônias. Fale conosco para conversarmos sobre a realidade do seu território."],
+    ["A Mairi atende empreendimentos de outras regiões além de Belém?", "A Mairi atua com foco nos empreendimentos dos Povos Tradicionais das Amazônias. Fale conosco para conversarmos sobre a realidade do seu território."],
     ["Como posso solicitar uma consultoria?", "Basta chamar a Mairi pelo WhatsApp. Vamos ouvir você, entender seu empreendimento e indicar os próximos passos."]];
     $("#faqs").innerHTML = faq.map((f, i) => `<div class="q rv"><h3 style="font:inherit"><button aria-expanded="false" aria-controls="a${i}" id="b${i}">${f[0]}<span class="pm"></span></button></h3><div class="a" id="a${i}" role="region" aria-labelledby="b${i}"><div><p>${f[1]}</p></div></div></div>`).join("");
     $$(".q button").forEach(b => b.onclick = () => { const o = b.getAttribute("aria-expanded") === "true"; $$(".q button").forEach(x => x.setAttribute("aria-expanded", "false")); b.setAttribute("aria-expanded", String(!o)) });
@@ -100,7 +100,7 @@
         const h = $("#qt"); h.tabIndex = -1; h.focus({ preventScroll: true }); qz.scrollTo(0, 0);
     }
     function finish(use) {
-        const bu = $("#burst"); bu.classList.add("go"); setTimeout(() => bu.classList.remove("go"), 1800);
+        const bu = $("#burst"); bu.classList.add("go"); setTimeout(() => bu.classList.remove("go"), 2300);
         const p = use ? result() : [];
         p.forEach(i => { const c = $$("#dg .card")[i]; if (c) c.classList.add("hit") });
         if (p.length) $("#f6").value = "Respondi o quiz do site. Meus principais desafios: " + p.slice(0, 3).map(i => desafios[i][0].toLowerCase()).join("; ") + ".";
@@ -122,8 +122,7 @@
     const fw = $("#fw");
     new IntersectionObserver(es => es.forEach(e => fw.classList.toggle("off", e.isIntersecting)), { threshold: .15 }).observe($("#contato"));
 
-    $$("[data-social]").forEach(a => { a.href = SOCIAL[a.dataset.social] || "#"; a.title = "Link demonstrativo: perfil oficial ainda não configurado" });
-    if (!WHATSAPP_NUMBER) $$("[data-wa]").forEach(a => a.title = "Link demonstrativo: número de WhatsApp ainda não configurado");
+    $$("[data-social]").forEach(a => { a.href = SOCIAL[a.dataset.social] || "#" });
 
     // paralaxe suave da ave (mouse)
     if (bird && matchMedia("(pointer:fine)").matches && !reduce) {
@@ -180,4 +179,16 @@
         exRaf = requestAnimationFrame(() => { const step = (exP[1].offsetLeft - exP[0].offsetLeft) || 1, i = Math.max(0, Math.min(exP.length - 1, Math.round(exTrack.scrollLeft / step))); exSel(i); exDots.forEach((d, k) => { d.classList.toggle("on", k === i); k === i ? d.setAttribute("aria-current", "true") : d.removeAttribute("aria-current") }) });
     }, { passive: true });
     exDots.forEach((d, i) => d.onclick = () => { const step = exP[1].offsetLeft - exP[0].offsetLeft; exTrack.scrollTo({ left: i * step, behavior: reduce ? "auto" : "smooth" }) });
+
+    // aurora reativa: acompanha o mouse e gira conforme a rolagem
+    const au = $(".aurora");
+    if (au && !reduce) {
+        const sp = () => { const m = document.documentElement.scrollHeight - innerHeight; au.style.setProperty("--p", (m > 0 ? Math.min(scrollY / m, 1) : 0).toFixed(4)) };
+        addEventListener("scroll", sp, { passive: true }); sp();
+        if (matchMedia("(pointer:fine)").matches) {
+            let tx = innerWidth / 2, ty = innerHeight * .4, cx = tx, cy = ty, raf = 0;
+            const loop = () => { cx += (tx - cx) * .08; cy += (ty - cy) * .08; au.style.setProperty("--mx", cx.toFixed(1) + "px"); au.style.setProperty("--my", cy.toFixed(1) + "px"); raf = (Math.abs(tx - cx) + Math.abs(ty - cy) > .5) ? requestAnimationFrame(loop) : 0 };
+            addEventListener("pointermove", e => { tx = e.clientX; ty = e.clientY; if (!raf) raf = requestAnimationFrame(loop) }, { passive: true });
+        }
+    }
 })();
